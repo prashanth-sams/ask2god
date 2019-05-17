@@ -31,4 +31,4 @@ nodemon server
 ```
 > [http://localhost:4000](http://localhost:4000)
 
-### `mongodb://localhost:27017/reactcrud`
+### `mongodb://localhost:27017/manager`

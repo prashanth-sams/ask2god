@@ -3,13 +3,13 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Business
 let Business = new Schema({
-  person_name: {
+  tag_name: {
     type: String
   },
-  business_name: {
+  book_name: {
     type: String
   },
-  business_gst_number: {
+  chapter_number: {
     type: Number
   }
 },{

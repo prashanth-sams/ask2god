@@ -5,54 +5,54 @@ export default class Create extends Component {
 
 	constructor(props){
 		super(props);
-		this.onChangePersonName = this.onChangePersonName.bind(this);
+		this.onChangeTagName = this.onChangeTagName.bind(this);
 		this.onChangeBusinessName = this.onChangeBusinessName.bind(this);
 		this.onChangeGstNumber = this.onChangeGstNumber.bind(this);
 		this.onSubmit= this.onSubmit.bind(this);
 
 		this.state = {
-			person_name : '',
-			business_name : '',
-			business_gst_number: ''
+			tag_name : '',
+			book_name : '',
+			chapter_number: ''
 		};
 	}
 
 
-	onChangePersonName(e) {
+	onChangeTagName(e) {
 		this.setState({
-			person_name : e.target.value
+			tag_name : e.target.value
 		});
 	}
 
 	onChangeBusinessName(e){
 		this.setState({
-			business_name : e.target.value
+			book_name : e.target.value
 		});
 	}
 
 	onChangeGstNumber(e){
 		this.setState({
-			business_gst_number : e.target.value
+			chapter_number : e.target.value
 		});
 	}
 
 	onSubmit(e){
 		e.preventDefault();
-		console.log(`The values are ${this.state.person_name}, ${this.state.business_name}, and ${this.state.business_gst_number}`)
+		console.log(`The values are ${this.state.tag_name}, ${this.state.book_name}, and ${this.state.chapter_number}`)
 		
 		const obj = {
-			person_name : this.state.person_name,
-			business_name : this.state.business_name,
-			business_gst_number : this.state.business_gst_number
+			tag_name : this.state.tag_name,
+			book_name : this.state.book_name,
+			chapter_number : this.state.chapter_number
 		};
 
 		axios.post('http://localhost:4000/business/add', obj)
 			.then( res=> console.log(res.data));
 
 		this.setState({
-			person_name : '',
-			business_name : '',
-			business_gst_number : ''
+			tag_name : '',
+			book_name : '',
+			chapter_number : ''
 		});
 
 		
@@ -66,35 +66,35 @@ export default class Create extends Component {
                     <div className="form-group">
                         <label>Tags:  </label>
                         <input type="text" className="form-control"
-                        	value={this.state.person_name}
-                        	onChange={this.onChangePersonName}
+                        	value={this.state.tag_name}
+                        	onChange={this.onChangeTagName}
                         />
                     </div>
                     <div className="form-group">
                         <label>Book: </label>
                         <input type="text" className="form-control"
-                        	value={this.state.business_name}
+                        	value={this.state.book_name}
                         	onChange={this.onChangeBusinessName}
                         />
                     </div>
 					<div className="form-group">
                         <label>Chapter: </label>
                         <input type="text" className="form-control"
-                        // value={this.state.business_gst_number}
+                        // value={this.state.chapter_number}
                         // onChange={this.onChangeGstNumber}
                         />
                     </div>
                     <div className="form-group">
                         <label>Verse number: </label>
                         <input type="text" className="form-control"
-                        value={this.state.business_gst_number}
+                        value={this.state.chapter_number}
                         onChange={this.onChangeGstNumber}
                         />
                     </div>
 					<div className="form-group">
                         <label>Verse: </label>
                         <input type="text" className="form-control"
-                        // value={this.state.business_gst_number}
+                        // value={this.state.chapter_number}
                         // onChange={this.onChangeGstNumber}
                         />
                     </div>

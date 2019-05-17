@@ -26,13 +26,13 @@ class TableRow extends Component {
     return (
         <tr>
           <td>
-            {this.props.obj.person_name}
+            {this.props.obj.tag_name}
           </td>
           <td>
-            {this.props.obj.business_name}
+            {this.props.obj.book_name}
           </td>
           <td>
-            {this.props.obj.business_gst_number}
+            {this.props.obj.chapter_number}
           </td>
           <td>
             <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>

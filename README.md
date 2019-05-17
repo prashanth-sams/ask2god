@@ -1,12 +1,12 @@
-### Application
+# Application
 
-# install libraries
+### library installation
 
 ```
 npm install
 ```
 
-# start application server
+### start application server
 
 ```
 npm start
@@ -14,16 +14,16 @@ npm start
 > http://localhost:3000](http://localhost:3000)
 
 
-### DataBase
+# DataBase
 
-# install libraries
+### library installation
 
 ```
 cd npm
 npm install
 ```
 
-# start db server
+### start db server
 
 ```
 nodemon server

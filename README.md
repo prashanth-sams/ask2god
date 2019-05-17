@@ -1,4 +1,4 @@
-# Application
+# Manager Application
 
 ### library installation
 
@@ -11,10 +11,10 @@ npm install
 ```
 npm start
 ```
-> http://localhost:3000](http://localhost:3000)
+> [http://localhost:3000](http://localhost:3000)
 
 
-# DataBase
+# Manager DataBase
 
 ### library installation
 
@@ -28,6 +28,6 @@ npm install
 ```
 nodemon server
 ```
-> http://localhost:4000](http://localhost:4000)
+> [http://localhost:4000](http://localhost:4000)
 
 ### `mongodb://localhost:27017/reactcrud`

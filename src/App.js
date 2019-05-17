@@ -28,7 +28,7 @@ class App extends Component {
             </div>
           </nav>
           <br/>
-          <h2>Welcome to React CRUD Tutorial</h2> <br/>
+          <h2>Word of God</h2> <br/>
           <Switch>
               <Route exact path='/create' component={ Create } />
               <Route path='/edit/:id' component={ Edit } />

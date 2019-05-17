@@ -26,6 +26,7 @@ npm install
 ### start db server
 
 ```
+npm install -g nodemon
 nodemon server
 ```
 > [http://localhost:4000](http://localhost:4000)

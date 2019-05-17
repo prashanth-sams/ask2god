@@ -61,31 +61,45 @@ export default class Create extends Component {
 	render(){
 		return (
 			<div style={{marginTop: 10}}>
-                <h3>Add New Business</h3>
+                <h3>add new</h3>
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
-                        <label>Add Person Name:  </label>
+                        <label>Tags:  </label>
                         <input type="text" className="form-control"
                         	value={this.state.person_name}
                         	onChange={this.onChangePersonName}
                         />
                     </div>
                     <div className="form-group">
-                        <label>Add Business Name: </label>
+                        <label>Book: </label>
                         <input type="text" className="form-control"
                         	value={this.state.business_name}
                         	onChange={this.onChangeBusinessName}
                         />
                     </div>
+					<div className="form-group">
+                        <label>Chapter: </label>
+                        <input type="text" className="form-control"
+                        // value={this.state.business_gst_number}
+                        // onChange={this.onChangeGstNumber}
+                        />
+                    </div>
                     <div className="form-group">
-                        <label>Add GST Number: </label>
+                        <label>Verse number: </label>
                         <input type="text" className="form-control"
                         value={this.state.business_gst_number}
                         onChange={this.onChangeGstNumber}
                         />
                     </div>
+					<div className="form-group">
+                        <label>Verse: </label>
+                        <input type="text" className="form-control"
+                        // value={this.state.business_gst_number}
+                        // onChange={this.onChangeGstNumber}
+                        />
+                    </div>
                     <div className="form-group">
-                        <input type="submit" value="Register Business" className="btn btn-primary"/>
+                        <input type="submit" value="Add Verse" className="btn btn-primary"/>
                     </div>
                 </form>
             </div>

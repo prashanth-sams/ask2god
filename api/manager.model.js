@@ -13,7 +13,10 @@ let Manager = new Schema({
     type: Number
   },
   verse_number: {
-    type: Number
+    type: String
+  },
+  verse_context: {
+    type: String
   }
 },{
     collection: 'manager'

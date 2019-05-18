@@ -32,10 +32,7 @@ class TableRow extends Component {
             {this.props.obj.book_name}
           </td>
           <td>
-            {this.props.obj.chapter_number}
-          </td>
-          <td>
-            {this.props.obj.verse_number}
+            {this.props.obj.chapter_number}: {this.props.obj.verse_number}
           </td>
           <td>
             {this.props.obj.verse_context}

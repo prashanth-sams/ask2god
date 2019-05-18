@@ -4,6 +4,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
+var ellipsis = {
+  overflow: 'hidden',
+  'text-overflow': 'ellipsis',
+  display: '-webkit-box',
+  '-webkit-line-clamp': '2',
+  '-webkit-box-orient': 'vertical',
+};
+
 class TableRow extends Component {
 
   constructor(props){
@@ -34,7 +42,7 @@ class TableRow extends Component {
           <td>
             {this.props.obj.chapter_number}: {this.props.obj.verse_number}
           </td>
-          <td>
+          <td style={ ellipsis }>
             {this.props.obj.verse_context}
           </td>
           <td>

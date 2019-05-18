@@ -40,6 +40,7 @@ export default class Index extends Component {
 		                <th>Tags</th>
 		                <th>Book</th>
 		                <th>Chapter</th>
+										<th>Verse number</th>
 		                <th colSpan="2">Action</th>
 		              </tr>
 		            </thead>

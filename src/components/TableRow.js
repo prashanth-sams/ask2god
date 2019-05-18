@@ -35,6 +35,9 @@ class TableRow extends Component {
             {this.props.obj.chapter_number}
           </td>
           <td>
+            {this.props.obj.verse_number}
+          </td>
+          <td>
             <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
           </td>
           <td>

@@ -11,6 +11,9 @@ let Manager = new Schema({
   },
   chapter_number: {
     type: Number
+  },
+  verse_number: {
+    type: Number
   }
 },{
     collection: 'manager'

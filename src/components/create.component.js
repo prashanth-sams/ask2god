@@ -8,12 +8,14 @@ export default class Create extends Component {
 		this.onChangeTagName = this.onChangeTagName.bind(this);
 		this.onChangeBookName = this.onChangeBookName.bind(this);
 		this.onChangeChapterNumber = this.onChangeChapterNumber.bind(this);
+		this.onChangeVerseNumber = this.onChangeVerseNumber.bind(this);
 		this.onSubmit= this.onSubmit.bind(this);
 
 		this.state = {
 			tag_name : '',
 			book_name : '',
-			chapter_number: ''
+			chapter_number: '',
+			verse_number: ''
 		};
 	}
 
@@ -36,14 +38,21 @@ export default class Create extends Component {
 		});
 	}
 
+	onChangeVerseNumber(e){
+		this.setState({
+			verse_number : e.target.value
+		});
+	}
+
 	onSubmit(e){
 		e.preventDefault();
-		console.log(`The values are ${this.state.tag_name}, ${this.state.book_name}, and ${this.state.chapter_number}`)
+		console.log(`The values are ${this.state.tag_name}, ${this.state.book_name}, ${this.state.chapter_number}, and ${this.state.verse_number}`)
 		
 		const obj = {
 			tag_name : this.state.tag_name,
 			book_name : this.state.book_name,
-			chapter_number : this.state.chapter_number
+			chapter_number : this.state.chapter_number,
+			verse_number : this.state.verse_number
 		};
 
 		axios.post('http://localhost:4000/manager/add', obj)
@@ -52,7 +61,8 @@ export default class Create extends Component {
 		this.setState({
 			tag_name : '',
 			book_name : '',
-			chapter_number : ''
+			chapter_number : '',
+			verse_number : ''
 		});
 
 		
@@ -80,15 +90,15 @@ export default class Create extends Component {
 					<div className="form-group">
                         <label>Chapter: </label>
                         <input type="text" className="form-control"
-                        // value={this.state.chapter_number}
-                        // onChange={this.onChangeChapterNumber}
+                        value={this.state.chapter_number}
+                        onChange={this.onChangeChapterNumber}
                         />
                     </div>
                     <div className="form-group">
                         <label>Verse number: </label>
                         <input type="text" className="form-control"
-                        value={this.state.chapter_number}
-                        onChange={this.onChangeChapterNumber}
+                        value={this.state.verse_number}
+                        onChange={this.onChangeVerseNumber}
                         />
                     </div>
 					<div className="form-group">

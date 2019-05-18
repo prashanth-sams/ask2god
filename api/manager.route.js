@@ -48,6 +48,7 @@ managerRoutes.route('/update/:id').post(function (req, res) {
         manager.book_name = req.body.book_name;
         manager.chapter_number = req.body.chapter_number;
         manager.verse_number = req.body.verse_number;
+        manager.verse_context = req.body.verse_context;
 
         manager.save().then(manager => {
           res.json('Update complete');

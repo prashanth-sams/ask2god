@@ -8,13 +8,15 @@ export default class Edit extends Component {
 	    this.onChangeBookName = this.onChangeBookName.bind(this);
 			this.onChangeChapterNumber = this.onChangeChapterNumber.bind(this);
 			this.onChangeVerseNumber = this.onChangeVerseNumber.bind(this);
+			this.onChangeVerseContext = this.onChangeVerseContext.bind(this);
 	    this.onSubmit = this.onSubmit.bind(this);
 
 	    this.state = {
 	      tag_name: '',
 	      book_name: '',
 				chapter_number:'',
-				verse_number:''
+				verse_number:'',
+				verse_context:''
 	    }
   	}
 
@@ -25,7 +27,8 @@ export default class Edit extends Component {
                 tag_name: response.data.tag_name, 
 								book_name: response.data.book_name,
 								chapter_number: response.data.chapter_number,
-                verse_number: response.data.verse_number });
+								verse_number: response.data.verse_number,
+								verse_context: response.data.verse_context });
           })
           .catch(function (error) {
               console.log(error);
@@ -57,13 +60,20 @@ export default class Edit extends Component {
 			})
 	}
 
+	onChangeVerseContext(e) {
+		this.setState({
+			verse_context: e.target.value
+		})
+	}
+
 	onSubmit(e) {
     	e.preventDefault();
 	    const obj = {
 	      tag_name: this.state.tag_name,
 	      book_name: this.state.book_name,
 				chapter_number: this.state.chapter_number,
-				verse_number: this.state.verse_number
+				verse_number: this.state.verse_number,
+				verse_context: this.state.verse_context
 	    };
 	    axios.post('http://localhost:4000/manager/update/'+this.props.match.params.id, obj)
 	        .then(res => console.log(res.data));
@@ -108,6 +118,14 @@ export default class Edit extends Component {
 	                      className="form-control"
 	                      value={this.state.verse_number}
 	                      onChange={this.onChangeVerseNumber}
+	                      />
+	                </div>
+									<div className="form-group">
+	                    <label>Verse: </label>
+	                    <input type="text" 
+	                      className="form-control"
+	                      value={this.state.verse_context}
+	                      onChange={this.onChangeVerseContext}
 	                      />
 	                </div>
 	                <div className="form-group">

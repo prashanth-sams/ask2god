@@ -6,13 +6,15 @@ export default class Edit extends Component {
 	    super(props);
 	    this.onChangeTagName = this.onChangeTagName.bind(this);
 	    this.onChangeBookName = this.onChangeBookName.bind(this);
-	    this.onChangeChapterNumber = this.onChangeChapterNumber.bind(this);
+			this.onChangeChapterNumber = this.onChangeChapterNumber.bind(this);
+			this.onChangeVerseNumber = this.onChangeVerseNumber.bind(this);
 	    this.onSubmit = this.onSubmit.bind(this);
 
 	    this.state = {
 	      tag_name: '',
 	      book_name: '',
-	      chapter_number:''
+				chapter_number:'',
+				verse_number:''
 	    }
   	}
 
@@ -21,8 +23,9 @@ export default class Edit extends Component {
           .then(response => {
               this.setState({ 
                 tag_name: response.data.tag_name, 
-                book_name: response.data.book_name,
-                chapter_number: response.data.chapter_number });
+								book_name: response.data.book_name,
+								chapter_number: response.data.chapter_number,
+                verse_number: response.data.verse_number });
           })
           .catch(function (error) {
               console.log(error);
@@ -48,13 +51,19 @@ export default class Edit extends Component {
 	    })
 	}
 
+	onChangeVerseNumber(e) {
+			this.setState({
+				verse_number: e.target.value
+			})
+	}
 
 	onSubmit(e) {
     	e.preventDefault();
 	    const obj = {
 	      tag_name: this.state.tag_name,
 	      book_name: this.state.book_name,
-	      chapter_number: this.state.chapter_number
+				chapter_number: this.state.chapter_number,
+				verse_number: this.state.verse_number
 	    };
 	    axios.post('http://localhost:4000/manager/update/'+this.props.match.params.id, obj)
 	        .then(res => console.log(res.data));
@@ -91,6 +100,14 @@ export default class Edit extends Component {
 	                      className="form-control"
 	                      value={this.state.chapter_number}
 	                      onChange={this.onChangeChapterNumber}
+	                      />
+	                </div>
+									<div className="form-group">
+	                    <label>Verse number: </label>
+	                    <input type="text" 
+	                      className="form-control"
+	                      value={this.state.verse_number}
+	                      onChange={this.onChangeVerseNumber}
 	                      />
 	                </div>
 	                <div className="form-group">

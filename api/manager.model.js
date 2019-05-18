@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-// Define collection and schema for Business
-let Business = new Schema({
+// Define collection and schema for Manager
+let Manager = new Schema({
   tag_name: {
     type: String
   },
@@ -13,7 +13,7 @@ let Business = new Schema({
     type: Number
   }
 },{
-    collection: 'business'
+    collection: 'manager'
 });
 
-module.exports = mongoose.model('Business', Business);
+module.exports = mongoose.model('Manager', Manager);

@@ -6,13 +6,13 @@ export default class Index extends Component {
 
 	constructor(props){
 		super(props);
-		this.state = {business : []};
+		this.state = {manager : []};
 	}
 
 	componentDidMount(){
-		axios.get('http://localhost:4000/business')
+		axios.get('http://localhost:4000/manager')
 			.then(response =>{
-				this.setState({business : response.data});
+				this.setState({manager : response.data});
 			})
 			.catch(function(error){
 				console.log(error);
@@ -20,14 +20,14 @@ export default class Index extends Component {
 	}
 
 	tabRow(){
-		return this.state.business.map((object, i) => {
+		return this.state.manager.map((object, i) => {
 			console.log(object,i);
 			return <TableRow obj={object} key={i} indice={i} delete ={ (ind) => this.deleteItem(ind)} />;
 		});
 	}
 
 	deleteItem(index){
-		this.setState({business : this.state.business.filter((_,i) => i !== index)});
+		this.setState({manager : this.state.manager.filter((_,i) => i !== index)});
 	}
 
 	render(){

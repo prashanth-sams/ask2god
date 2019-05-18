@@ -6,8 +6,8 @@ export default class Create extends Component {
 	constructor(props){
 		super(props);
 		this.onChangeTagName = this.onChangeTagName.bind(this);
-		this.onChangeBusinessName = this.onChangeBusinessName.bind(this);
-		this.onChangeGstNumber = this.onChangeGstNumber.bind(this);
+		this.onChangeBookName = this.onChangeBookName.bind(this);
+		this.onChangeChapterNumber = this.onChangeChapterNumber.bind(this);
 		this.onSubmit= this.onSubmit.bind(this);
 
 		this.state = {
@@ -24,13 +24,13 @@ export default class Create extends Component {
 		});
 	}
 
-	onChangeBusinessName(e){
+	onChangeBookName(e){
 		this.setState({
 			book_name : e.target.value
 		});
 	}
 
-	onChangeGstNumber(e){
+	onChangeChapterNumber(e){
 		this.setState({
 			chapter_number : e.target.value
 		});
@@ -46,7 +46,7 @@ export default class Create extends Component {
 			chapter_number : this.state.chapter_number
 		};
 
-		axios.post('http://localhost:4000/business/add', obj)
+		axios.post('http://localhost:4000/manager/add', obj)
 			.then( res=> console.log(res.data));
 
 		this.setState({
@@ -74,28 +74,28 @@ export default class Create extends Component {
                         <label>Book: </label>
                         <input type="text" className="form-control"
                         	value={this.state.book_name}
-                        	onChange={this.onChangeBusinessName}
+                        	onChange={this.onChangeBookName}
                         />
                     </div>
 					<div className="form-group">
                         <label>Chapter: </label>
                         <input type="text" className="form-control"
                         // value={this.state.chapter_number}
-                        // onChange={this.onChangeGstNumber}
+                        // onChange={this.onChangeChapterNumber}
                         />
                     </div>
                     <div className="form-group">
                         <label>Verse number: </label>
                         <input type="text" className="form-control"
                         value={this.state.chapter_number}
-                        onChange={this.onChangeGstNumber}
+                        onChange={this.onChangeChapterNumber}
                         />
                     </div>
 					<div className="form-group">
                         <label>Verse: </label>
                         <input type="text" className="form-control"
                         // value={this.state.chapter_number}
-                        // onChange={this.onChangeGstNumber}
+                        // onChange={this.onChangeChapterNumber}
                         />
                     </div>
                     <div className="form-group">

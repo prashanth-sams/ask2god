@@ -14,7 +14,7 @@ class TableRow extends Component {
   }
 
   delete(){
-    axios.get('http://localhost:4000/business/delete/'+this.props.obj._id)
+    axios.get('http://localhost:4000/manager/delete/'+this.props.obj._id)
             .then(res => {
               console.log('deleted');
               this.props.delete(this.props.indice);

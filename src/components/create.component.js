@@ -1,7 +1,9 @@
 import React , { Component } from 'react';
 import axios from 'axios';
+import CreatableSelect from 'react-select/lib/Creatable';
+import { colourOptions } from './../docs/data';
 
-export default class Create extends Component {
+export default class Create extends Component<*, State> {
 
 	constructor(props){
 		super(props);
@@ -78,6 +80,13 @@ export default class Create extends Component {
 		
 	}
 
+	handleChange = (newValue: any, actionMeta: any) => {
+		console.group('Value Changed');
+		console.log(newValue);
+		console.log(`action: ${actionMeta.action}`);
+		console.groupEnd();
+	};
+
 	render(){
 		return (
 			<div style={{marginTop: 10}}>
@@ -85,10 +94,17 @@ export default class Create extends Component {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Tags:  </label>
-                        <input type="text" className="form-control"
+
+						<CreatableSelect
+							isMulti
+							onChange={this.handleChange}
+							options={colourOptions}
+						/>
+
+                        {/* <input type="text" className="form-control"
                         	value={this.state.tag_name}
                         	onChange={this.onChangeTagName}
-                        />
+                        /> */}
                     </div>
                     <div className="form-group">
                         <label>Book: </label>

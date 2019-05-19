@@ -3,14 +3,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import styled from 'styled-components';
 
-var ellipsis = {
-  overflow: 'hidden',
-  'text-overflow': 'ellipsis',
-  display: '-webkit-box',
-  '-webkit-line-clamp': '2',
-  '-webkit-box-orient': 'vertical',
-};
+
+export const Ellipsis = styled.td`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  width: 500px;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  -moz-binding: url('ellipsis.xml#ellipsis');
+`
 
 class TableRow extends Component {
 
@@ -42,9 +46,9 @@ class TableRow extends Component {
           <td>
             {this.props.obj.chapter_number}: {this.props.obj.verse_number}
           </td>
-          <td style={ ellipsis }>
+          <Ellipsis>
             {this.props.obj.verse_context}
-          </td>
+          </Ellipsis>
           <td>
             <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
           </td>

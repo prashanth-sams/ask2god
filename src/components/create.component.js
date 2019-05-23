@@ -23,12 +23,15 @@ export default class Create extends Component<*, State> {
 		};
 	}
 
-
-	onChangeTagName(e) {
+	onChangeTagName(newValue: any, actionMeta: any) {
+		console.group('Value Changed');
+		console.log(newValue);
+		console.log(`action: ${actionMeta.action}`);
+		console.groupEnd();
 		this.setState({
-			tag_name : e.target.value
+			tag_name : newValue[0].value
 		});
-	}
+	};
 
 	onChangeBookName(e){
 		this.setState({
@@ -75,17 +78,9 @@ export default class Create extends Component<*, State> {
 			chapter_number : '',
 			verse_number : '',
 			verse_context : ''
-		});
-
-		
+		});		
 	}
 
-	handleChange = (newValue: any, actionMeta: any) => {
-		console.group('Value Changed');
-		console.log(newValue);
-		console.log(`action: ${actionMeta.action}`);
-		console.groupEnd();
-	};
 
 	render(){
 		return (
@@ -94,17 +89,12 @@ export default class Create extends Component<*, State> {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Tags:  </label>
-
 						<CreatableSelect
 							isMulti
-							onChange={this.handleChange}
+							onChange={this.onChangeTagName}
 							options={colourOptions}
+							placeholder="Tag verse"
 						/>
-
-                        {/* <input type="text" className="form-control"
-                        	value={this.state.tag_name}
-                        	onChange={this.onChangeTagName}
-                        /> */}
                     </div>
                     <div className="form-group">
                         <label>Book: </label>

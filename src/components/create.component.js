@@ -15,7 +15,7 @@ export default class Create extends Component<*, State> {
 		this.onSubmit= this.onSubmit.bind(this);
 
 		this.state = {
-			tag_name : null,
+			tag_name : '',
 			book_name : '',
 			chapter_number: '',
 			verse_number: '',
@@ -34,7 +34,6 @@ export default class Create extends Component<*, State> {
 	};
 
 	onChangeBookName(e){
-		console.log(e.target.value)
 		this.setState({
 			book_name : e.target.value
 		});

@@ -34,7 +34,7 @@ export default class Create extends Component<*, State> {
 			values.push(newValue[i].value);
 		}
 		
-        this.setState({tag_name: values});
+		this.setState({tag_name: values});
 	};
 
 	onChangeBookName(e){

@@ -1,14 +1,14 @@
 export const colourOptions = [
-    { value: 'ocean', label: 'Ocean', color: '#00B8D9', isFixed: true },
-    { value: 'blue', label: 'Blue', color: '#0052CC', disabled: true },
-    { value: 'purple', label: 'Purple', color: '#5243AA' },
-    { value: 'red', label: 'Red', color: '#FF5630', isFixed: true },
-    { value: 'orange', label: 'Orange', color: '#FF8B00' },
-    { value: 'yellow', label: 'Yellow', color: '#FFC400' },
-    { value: 'green', label: 'Green', color: '#36B37E' },
-    { value: 'forest', label: 'Forest', color: '#00875A' },
-    { value: 'slate', label: 'Slate', color: '#253858' },
-    { value: 'silver', label: 'Silver', color: '#666666' },
+    { value: 'love', label: 'Love', color: '#00B8D9', isFixed: true },
+    { value: 'lust', label: 'Lust', color: '#0052CC', disabled: true },
+    { value: 'trust', label: 'Trust', color: '#5243AA' },
+    { value: 'jesus', label: 'Jesus', color: '#FF5630', isFixed: true },
+    { value: 'god', label: 'God', color: '#FF8B00' },
+    { value: 'angel', label: 'Angel', color: '#FFC400' },
+    { value: 'lucifer', label: 'Lucifer', color: '#36B37E' },
+    { value: 'money', label: 'Money', color: '#00875A' },
+    { value: 'heaven', label: 'Heaven', color: '#253858' },
+    { value: 'paradise', label: 'Paradise', color: '#253858' },
   ];
   
   export const flavourOptions = [

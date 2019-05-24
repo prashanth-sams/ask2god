@@ -1,7 +1,16 @@
 import React , { Component } from 'react';
+import Select, { components } from 'react-select';
 import axios from 'axios';
-import CreatableSelect from 'react-select/lib/Creatable';
+import Tooltip from '@atlaskit/tooltip';
 import { colourOptions } from './../docs/data';
+
+const MultiValueLabel = (props) => {
+	return (
+	  <Tooltip content={'Customise your multi-value label component!'}>
+		<components.MultiValueLabel {...props}/>
+	  </Tooltip>
+	);
+  };
 
 export default class Create extends Component<*, State> {
 
@@ -34,7 +43,9 @@ export default class Create extends Component<*, State> {
 			values.push(newValue[i].value);
 		}
 		
-		this.setState({tag_name: values});
+		this.setState({
+			tag_name: values
+		});
 	};
 
 	onChangeBookName(e){
@@ -82,7 +93,7 @@ export default class Create extends Component<*, State> {
 			chapter_number : '',
 			verse_number : '',
 			verse_context : ''
-		});		
+		});
 	}
 
 
@@ -93,11 +104,14 @@ export default class Create extends Component<*, State> {
                 <form onSubmit={this.onSubmit}>
                     <div className="form-group">
                         <label>Tags:  </label>
-						<CreatableSelect
+						<Select
 							isMulti
 							onChange={this.onChangeTagName}
 							options={colourOptions}
 							placeholder="eg., Love"
+							autoFocus
+							components={{ MultiValueLabel }}
+							styles={{ multiValueLabel: (base) => ({ ...base, backgroundColor: colourOptions[2].color, color: 'white' }) }}
 						/>
                     </div>
                     <div className="form-group">

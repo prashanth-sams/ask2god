@@ -28,9 +28,13 @@ export default class Create extends Component<*, State> {
 		console.log(newValue);
 		console.log(`action: ${actionMeta.action}`);
 		console.groupEnd();
-		this.setState({
-			tag_name : newValue[0].value
-		});
+
+		var values = [];
+		for (var i = 0, l = newValue.length; i < l; i++) {
+			values.push(newValue[i].value);
+		}
+		
+		this.setState({tag_name: values});
 	};
 
 	onChangeBookName(e){
@@ -93,7 +97,7 @@ export default class Create extends Component<*, State> {
 							isMulti
 							onChange={this.onChangeTagName}
 							options={colourOptions}
-							placeholder="Tag verse"
+							placeholder="eg., Love"
 						/>
                     </div>
                     <div className="form-group">

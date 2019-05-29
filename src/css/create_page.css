@@ -1,0 +1,62 @@
+input[type=text], textarea {
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-width: 1px;
+  border-style: solid;
+  outline: none;
+  font-size: 0.9rem;
+  padding: 3px 0px 3px 10px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  -moz-box-shadow: 0 0 5px #5243AA;
+  -webkit-box-shadow: 0 0 5px #5243AA;
+  box-shadow: 0 0 5px #5243AA;
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-width: 1px;
+  font-size: 0.9rem;
+  border-style: solid;
+  padding: 3px 0px 3px 5px;
+  border: 1px solid #5243AA;
+}
+
+#react-select-2-input {
+  box-shadow: none;
+}
+
+input[type=submit], input[type=submit]:hover {
+  color: #fff;
+  background-color: #5243AA;
+  border-color: #5243AA;
+}
+
+input[type=submit]:focus {
+  box-shadow: 1px 1px 1px 0px #5243AA;
+}
+
+div[class*="css-1szy77t-control"], div[class*="css-1szy77t-control"]:focus, div[class*="css-1szy77t-control"]:hover {
+  -moz-box-shadow: 0 0 5px #5243AA;
+  -webkit-box-shadow: 0 0 5px #5243AA;
+  box-shadow: 0 0 5px #5243AA;
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-width: 1px;
+  font-size: 0.9rem;
+  border-style: solid;
+  border: 1px solid #5243AA;
+}
+
+/* label {
+  width: 150px;
+  float: left;
+}
+
+body {
+  padding: 20px;
+} */

@@ -19,16 +19,15 @@ class App extends Component {
                   <Link to={'/'} className="nav-link">Home</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/create'} className="nav-link">Create</Link>
+                  <Link to={'/create'} className="nav-link">Add</Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/index'} className="nav-link">Index</Link>
+                  <Link to={'/index'} className="nav-link">List</Link>
                 </li>
               </ul>
             </div>
           </nav>
           <br/>
-          <h2>Word of God</h2> <br/>
           <Switch>
               <Route exact path='/create' component={ Create } />
               <Route path='/edit/:id' component={ Edit } />

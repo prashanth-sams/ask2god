@@ -1,16 +1,12 @@
 import React , { Component } from 'react';
 import Select, { components } from 'react-select';
 import axios from 'axios';
-import Tooltip from '@atlaskit/tooltip';
 import { colourOptions } from './../docs/data';
+import "./../css/create_page.css"
 
 const MultiValueLabel = (props) => {
-	return (
-	  <Tooltip content={'Customise your multi-value label component!'}>
-		<components.MultiValueLabel {...props}/>
-	  </Tooltip>
-	);
-  };
+	return (<components.MultiValueLabel {...props}/>);
+};
 
 export default class Create extends Component<*, State> {
 
@@ -75,6 +71,7 @@ export default class Create extends Component<*, State> {
 	onSubmit(e){
 		e.preventDefault();
 		console.log(`The values are ${this.state.tag_name}, ${this.state.book_name}, ${this.state.chapter_number}, ${this.state.verse_number}, and ${this.state.verse_context}`)
+		alert(`Added verse with ${this.state.tag_name}, ${this.state.book_name}, ${this.state.chapter_number}, ${this.state.verse_number}, and ${this.state.verse_context}`)
 		
 		const obj = {
 			tag_name : this.state.tag_name,
@@ -96,57 +93,65 @@ export default class Create extends Component<*, State> {
 		});
 	}
 
-
 	render(){
 		return (
 			<div style={{marginTop: 10}}>
-                <h3>add new</h3>
-                <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                        <label>Tags:  </label>
-						<Select
-							isMulti
-							onChange={this.onChangeTagName}
-							options={colourOptions}
-							placeholder="eg., Love"
-							autoFocus
-							components={{ MultiValueLabel }}
-							styles={{ multiValueLabel: (base) => ({ ...base, backgroundColor: colourOptions[2].color, color: 'white' }) }}
-						/>
-                    </div>
-                    <div className="form-group">
-                        <label>Book: </label>
-                        <input type="text" className="form-control"
-                        	value={this.state.book_name}
-                        	onChange={this.onChangeBookName}
-                        />
-                    </div>
-					<div className="form-group">
-                        <label>Chapter: </label>
-                        <input type="text" className="form-control"
-                        value={this.state.chapter_number}
-                        onChange={this.onChangeChapterNumber}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>Verse number: </label>
-                        <input type="text" className="form-control"
-                        value={this.state.verse_number}
-                        onChange={this.onChangeVerseNumber}
-                        />
-                    </div>
-					<div className="form-group">
-                        <label>Verse: </label>
-                        <input type="text" className="form-control"
-                        value={this.state.verse_context}
-                        onChange={this.onChangeVerseContext}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <input type="submit" value="Add Verse" className="btn btn-primary"/>
-                    </div>
-                </form>
+				<h3 align="center">Add Verse</h3>
+          <form onSubmit={this.onSubmit.bind(this)}>
+						<div className="form-group" style={{ fontSize: '0.9rem' }}>
+							<Select
+								name="tags"
+								isMulti
+								onChange={this.onChangeTagName}
+								options={colourOptions}
+								placeholder="Tags [eg., love]"
+								autoFocus
+								components={{ MultiValueLabel }}
+								styles={{ multiValueLabel: (base) => ({ ...base, backgroundColor: colourOptions[2].color, color: 'white' }) }}
+								required
+							/>
             </div>
+						<div className="form-group">
+							<input type="text" className="form-control"
+								name="book"
+								placeholder="Book [eg., matthew]"
+								value={this.state.book_name}
+								onChange={this.onChangeBookName}
+								required
+							/>
+            </div>
+						<div className="form-group" >
+							<input type="text" className="form-control"
+								name="chapter"
+								placeholder="Chapter"
+								value={this.state.chapter_number}
+								onChange={this.onChangeChapterNumber}
+								required
+							/>
+						</div>
+						<div className="form-group">
+							<input type="text" className="form-control"
+								name="verse number"
+								placeholder="Verse number"
+								value={this.state.verse_number}
+								onChange={this.onChangeVerseNumber}
+								required
+              />
+            </div>
+						<div className="form-group">
+							<input type="text" className="form-control"
+								name="verse"
+								placeholder="Verse context"
+								value={this.state.verse_context}
+								onChange={this.onChangeVerseContext}
+								required
+              />
+            </div>
+						<div className="form-group">
+							<input type="submit" value="Add Verse" className="btn btn-primary"/>
+            </div>
+          </form>
+        </div>
 		)
 	}
 }

@@ -71,7 +71,7 @@ export default class Create extends Component<*, State> {
 	onSubmit(e){
 		e.preventDefault();
 		console.log(`The values are ${this.state.tag_name}, ${this.state.book_name}, ${this.state.chapter_number}, ${this.state.verse_number}, and ${this.state.verse_context}`)
-    alert(`Added verse with ${this.state.tag_name}, ${this.state.book_name}, ${this.state.chapter_number}, ${this.state.verse_number}, and ${this.state.verse_context}`)
+		alert(`Added verse with ${this.state.tag_name}, ${this.state.book_name}, ${this.state.chapter_number}, ${this.state.verse_number}, and ${this.state.verse_context}`)
 		
 		const obj = {
 			tag_name : this.state.tag_name,
@@ -98,7 +98,7 @@ export default class Create extends Component<*, State> {
 			<div style={{marginTop: 10}}>
 				<h3 align="center">Add Verse</h3>
           <form onSubmit={this.onSubmit.bind(this)}>
-            <div className="form-group" style={{ fontSize: '0.9rem' }}>
+						<div className="form-group" style={{ fontSize: '0.9rem' }}>
 							<Select
 								name="tags"
 								isMulti
@@ -111,7 +111,7 @@ export default class Create extends Component<*, State> {
 								required
 							/>
             </div>
-            <div className="form-group">
+						<div className="form-group">
 							<input type="text" className="form-control"
 								name="book"
 								placeholder="Book [eg., matthew]"
@@ -129,7 +129,7 @@ export default class Create extends Component<*, State> {
 								required
 							/>
 						</div>
-            <div className="form-group">
+						<div className="form-group">
 							<input type="text" className="form-control"
 								name="verse number"
 								placeholder="Verse number"
@@ -139,7 +139,7 @@ export default class Create extends Component<*, State> {
               />
             </div>
 						<div className="form-group">
-              <input type="text" className="form-control"
+							<input type="text" className="form-control"
 								name="verse"
 								placeholder="Verse context"
 								value={this.state.verse_context}
@@ -147,8 +147,8 @@ export default class Create extends Component<*, State> {
 								required
               />
             </div>
-            <div className="form-group">
-                <input type="submit" value="Add Verse" className="btn btn-primary"/>
+						<div className="form-group">
+							<input type="submit" value="Add Verse" className="btn btn-primary"/>
             </div>
           </form>
         </div>

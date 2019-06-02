@@ -2,7 +2,6 @@ import React , { Component } from 'react';
 import Select, { components } from 'react-select';
 import axios from 'axios';
 import { colourOptions } from './../docs/data';
-import "./../css/create_page.css"
 
 const MultiValueLabel = (props) => {
 	return (<components.MultiValueLabel {...props}/>);

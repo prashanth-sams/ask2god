@@ -13,7 +13,30 @@ input[type=text], textarea {
   border: 1px solid #DDDDDD;
 }
 
-input[type=text]:focus, textarea:focus {
+textarea:focus {
+  -moz-box-shadow: 0 0 5px #5243AA;
+  -webkit-box-shadow: 0 0 5px #5243AA;
+  box-shadow: 0 0 5px #5243AA;
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-width: 1px;
+  font-size: 0.9rem;
+  border-style: solid;
+  padding: 3px 0px 3px 5px;
+  border: 1px solid #5243AA;
+}
+
+.css-1g6gooi input[type=text]:focus {
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-width: 1px;
+  font-size: 0.9rem;
+  border-style: solid;
+  padding: 3px 0px 3px 5px;
+  border: 1px solid #5243AA;
+}
+
+input[name][type=text]:focus {
   -moz-box-shadow: 0 0 5px #5243AA;
   -webkit-box-shadow: 0 0 5px #5243AA;
   box-shadow: 0 0 5px #5243AA;

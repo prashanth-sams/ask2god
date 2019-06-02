@@ -90,7 +90,8 @@ export default class Edit extends Component {
 	                <div className="form-group">
 	                    <label>Tags:  </label>
 	                    <input 
-	                      type="text" 
+												name="tags"
+												type="text" 
 	                      className="form-control" 
 	                      value={this.state.tag_name}
 	                      onChange={this.onChangeTagName}
@@ -99,7 +100,8 @@ export default class Edit extends Component {
 	                <div className="form-group">
 	                    <label>Book: </label>
 	                    <input type="text" 
-	                      className="form-control"
+												name="book"
+												className="form-control"
 	                      value={this.state.book_name}
 	                      onChange={this.onChangeBookName}
 	                      />
@@ -107,7 +109,8 @@ export default class Edit extends Component {
 	                <div className="form-group">
 	                    <label>Chapter: </label>
 	                    <input type="text" 
-	                      className="form-control"
+												name="chapter"
+												className="form-control"
 	                      value={this.state.chapter_number}
 	                      onChange={this.onChangeChapterNumber}
 	                      />
@@ -115,7 +118,8 @@ export default class Edit extends Component {
 									<div className="form-group">
 	                    <label>Verse number: </label>
 	                    <input type="text" 
-	                      className="form-control"
+												name="verse number"
+												className="form-control"
 	                      value={this.state.verse_number}
 	                      onChange={this.onChangeVerseNumber}
 	                      />
@@ -123,7 +127,8 @@ export default class Edit extends Component {
 									<div className="form-group">
 	                    <label>Verse: </label>
 	                    <input type="text" 
-	                      className="form-control"
+												name="verse"
+												className="form-control"
 	                      value={this.state.verse_context}
 	                      onChange={this.onChangeVerseContext}
 	                      />

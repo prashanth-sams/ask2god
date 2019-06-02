@@ -32,8 +32,8 @@ export default class Index extends Component {
 
 	render(){
 		return (
-			<div>
-				<h3>verse List</h3>
+			<div>				
+				<h3 align="center">Verse List</h3>
 				<table className="table table-striped" style={{ marginTop: 20 }}>
 		            <thead>
 		              <tr>

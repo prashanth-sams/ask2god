@@ -30,7 +30,7 @@ input[type=text]:focus, textarea:focus {
   box-shadow: none;
 }
 
-input[type=submit], input[type=submit]:hover {
+input[type=submit], .btn-primary:not(:disabled):not(.disabled):active, .btn-primary {
   color: #fff;
   background-color: #5243AA;
   border-color: #5243AA;
@@ -52,11 +52,31 @@ div[class*="css-1szy77t-control"], div[class*="css-1szy77t-control"]:focus, div[
   border: 1px solid #5243AA;
 }
 
-/* label {
-  width: 150px;
-  float: left;
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 5px #5243AA;
 }
 
-body {
-  padding: 20px;
-} */
+input[type=submit]:hover, .btn-primary:hover {
+  color: #fff;
+  -moz-box-shadow: 0 0 5px #5243AA;
+  -webkit-box-shadow: 0 0 5px #5243AA;
+  box-shadow: 0 0 8px #5243AA;
+  border-color: #5243AA;
+  background-color: #3c2c94;
+  border-width: 1px;
+  border-style: solid;
+  border: 1px solid #5243AA;
+}
+
+.btn-danger:hover {
+  color: #fff;
+  -moz-box-shadow: 0 0 5px #c82333;
+  -webkit-box-shadow: 0 0 5px #c82333;
+  box-shadow: 0 0 8px #c82333;
+  background-color: #bd2130;
+  border-color: #bd2130;
+}
+
+.btn-danger:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 5px #c82333;
+}

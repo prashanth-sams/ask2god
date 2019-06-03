@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/common_styles.css"
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-
+import { slide as Menu } from 'react-burger-menu'
 import Create from './components/create.component';
 import Edit from './components/edit.component';
 import Index from './components/index.component';
-import './css/tabs.css'
+import './css/tabs.css';
+import './css/mobile.css';
 
 function handleClick(e) {
   var header = document.getElementById("header");
@@ -39,8 +40,13 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
+          <Menu width={ '60%' }>
+            <a id="resp-home" className="menu-item" href="/">Home</a>
+            <a id="resp-create" className="menu-item" href="/create">Add</a>
+            <a id="resp-index" className="menu-item" href="/index">List</a>
+          </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={'/'} className="navbar-brand">Ask2God Manager</Link>
+            <Link to={'/'} className="navbar-brand">Ask2God</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto" id="header">
                 <li className="nav-item">

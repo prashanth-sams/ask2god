@@ -89,9 +89,9 @@ export default class Edit extends Component {
 	            <form onSubmit={this.onSubmit}>
 	                <div className="form-group">
 	                    <label>Tags:  </label>
-	                    <input type="text" className="form-control" 
+	                    <input type="text" className="form-control"
 												name="tags"
-	                      value={this.state.tag_name}
+												value={this.state.tag_name}
 	                      onChange={this.onChangeTagName}
 	                      />
 	                </div>

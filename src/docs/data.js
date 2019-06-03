@@ -1,14 +1,46 @@
 export const colourOptions = [
+    // actions
     { value: 'love', label: 'Love', color: '#00B8D9', isFixed: true },
-    { value: 'lust', label: 'Lust', color: '#0052CC', disabled: true },
+    { value: 'peace', label: 'Peace', color: '#5243AA'},
     { value: 'trust', label: 'Trust', color: '#5243AA' },
-    { value: 'jesus', label: 'Jesus', color: '#FF5630', isFixed: true },
+    { value: 'faith', label: 'Faith', color: '#5243AA' },
+
+    // God
     { value: 'god', label: 'God', color: '#FF8B00' },
+    { value: 'jesus', label: 'Jesus Christ', color: '#FF5630'},
+    { value: 'holyspirit', label: 'Holy Spirit', color: '#FF5630'},
     { value: 'angel', label: 'Angel', color: '#FFC400' },
-    { value: 'lucifer', label: 'Lucifer', color: '#36B37E' },
-    { value: 'money', label: 'Money', color: '#00875A' },
     { value: 'heaven', label: 'Heaven', color: '#253858' },
     { value: 'paradise', label: 'Paradise', color: '#253858' },
+    { value: 'lord', label: 'Lord', color: '#FF5630'},
+    { value: 'church', label: 'Church', color: '#FF5630'},
+    { value: 'pulpit', label: 'Pulpit', color: '#FF5630'},
+    { value: 'denomination', label: 'Denomination', color: '#FF5630'},
+
+    // evil
+    { value: 'lucifer', label: 'Lucifer', color: '#36B37E' },
+    { value: 'satan', label: 'Satan', color: '#36B37E' },
+    { value: 'evil', label: 'Evil', color: '#36B37E' },
+    { value: 'idol', label: 'Idol', color: '#36B37E' },
+    
+    // earthly
+    { value: 'money', label: 'Money', color: '#00875A' },
+    { value: 'murder', label: 'Murder', color: '#00875A' },
+    { value: 'suicide', label: 'Suicide', color: '#00875A' },
+    
+    // downside
+    { value: 'lust', label: 'Lust', color: '#0052CC'},
+    { value: 'lgbt', label: 'LGBT', color: '#253858' },
+    { value: 'gay', label: 'Gay', color: '#253858' },
+    { value: 'lesbian', label: 'Lesbian', color: '#253858' },
+    { value: 'bisexual', label: 'Bisexual', color: '#253858' },
+
+    // preachings
+    { value: 'gospel', label: 'Gospel', color: '#253858' },
+    { value: 'goodnews', label: 'Good news', color: '#253858' },
+    { value: 'preach', label: 'Preach', color: '#253858' },
+    { value: 'evangelism', label: 'Evangelism', color: '#253858' },
+    { value: 'sermon', label: 'Sermon', color: '#253858' }
   ];
   
   export const flavourOptions = [

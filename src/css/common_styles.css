@@ -13,7 +13,30 @@ input[type=text], textarea {
   border: 1px solid #DDDDDD;
 }
 
-input[type=text]:focus, textarea:focus {
+textarea:focus {
+  -moz-box-shadow: 0 0 5px #5243AA;
+  -webkit-box-shadow: 0 0 5px #5243AA;
+  box-shadow: 0 0 5px #5243AA;
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-width: 1px;
+  font-size: 0.9rem;
+  border-style: solid;
+  padding: 3px 0px 3px 5px;
+  border: 1px solid #5243AA;
+}
+
+.css-1g6gooi input[type=text]:focus {
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-width: 1px;
+  font-size: 0.9rem;
+  border-style: solid;
+  padding: 3px 0px 3px 5px;
+  border: 1px solid #5243AA;
+}
+
+input[name][type=text]:focus {
   -moz-box-shadow: 0 0 5px #5243AA;
   -webkit-box-shadow: 0 0 5px #5243AA;
   box-shadow: 0 0 5px #5243AA;
@@ -79,4 +102,36 @@ input[type=submit]:hover, .btn-primary:hover {
 
 .btn-danger:not(:disabled):not(.disabled):active:focus {
   box-shadow: 0 0 5px #c82333;
+}
+
+.navbar-light .navbar-brand {
+  color: rgba(74, 74, 74, 0.9);
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    position: relative;
+    overflow: hidden;
+  }
+  h3 {
+    padding-top: 0em;
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  .bm-menu-wrap {
+    margin-left: -10%;
+  }
+  .bm-overlay {
+    margin-left: 10%;
+  } 
+  .navbar-light .navbar-brand {
+    color: rgba(74, 74, 74, 0.9);
+    padding-left: 77%;
+    font-size: 1.1rem;
+    padding-top: 0%;
+  }
+}
+
+@media only screen and (min-width : 769px) {
+  .bm-menu-wrap:not(.show), .bm-burger-button:not(.show) {display:none;}
 }

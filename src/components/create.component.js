@@ -119,7 +119,7 @@ export default class Create extends Component<*, State> {
 								required
 							/>
             </div>
-						<div className="form-group" >
+						<div className="form-group">
 							<input type="text" className="form-control"
 								name="chapter"
 								placeholder="Chapter"

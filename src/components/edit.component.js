@@ -89,46 +89,40 @@ export default class Edit extends Component {
 	            <form onSubmit={this.onSubmit}>
 	                <div className="form-group">
 	                    <label>Tags:  </label>
-	                    <input 
+	                    <input type="text" className="form-control" 
 												name="tags"
-												type="text" 
-	                      className="form-control" 
 	                      value={this.state.tag_name}
 	                      onChange={this.onChangeTagName}
 	                      />
 	                </div>
 	                <div className="form-group">
 	                    <label>Book: </label>
-	                    <input type="text" 
+	                    <input type="text" className="form-control" 
 												name="book"
-												className="form-control"
 	                      value={this.state.book_name}
 	                      onChange={this.onChangeBookName}
 	                      />
 	                </div>
 	                <div className="form-group">
 	                    <label>Chapter: </label>
-	                    <input type="text" 
+	                    <input type="text" className="form-control" 
 												name="chapter"
-												className="form-control"
 	                      value={this.state.chapter_number}
 	                      onChange={this.onChangeChapterNumber}
 	                      />
 	                </div>
 									<div className="form-group">
 	                    <label>Verse number: </label>
-	                    <input type="text" 
+	                    <input type="text" className="form-control" 
 												name="verse number"
-												className="form-control"
 	                      value={this.state.verse_number}
 	                      onChange={this.onChangeVerseNumber}
 	                      />
 	                </div>
 									<div className="form-group">
 	                    <label>Verse: </label>
-	                    <input type="text" 
+	                    <input type="text" className="form-control" 
 												name="verse"
-												className="form-control"
 	                      value={this.state.verse_context}
 	                      onChange={this.onChangeVerseContext}
 	                      />

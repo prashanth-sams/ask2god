@@ -84,56 +84,54 @@ export default class Edit extends Component {
   	render() {
     
 	    return (
-	        <div style={{ marginTop: 10 }}>
-	            <h3 align="center">Update Verse</h3>
-	            <form onSubmit={this.onSubmit}>
-	                <div className="form-group">
-	                    <label>Tags:  </label>
-											<input type="text" className="form-control"
-												name="tags"
-	                      value={this.state.tag_name}
-	                      onChange={this.onChangeTagName}
-	                      />
-	                </div>
-	                <div className="form-group">
-	                    <label>Book: </label>
-											<input type="text" className="form-control"
-												name="book"
-	                      value={this.state.book_name}
-	                      onChange={this.onChangeBookName}
-	                      />
-	                </div>
-	                <div className="form-group">
-	                    <label>Chapter: </label>
-											<input type="text" className="form-control"
-												name="chapter"
-	                      value={this.state.chapter_number}
-	                      onChange={this.onChangeChapterNumber}
-	                      />
-	                </div>
-									<div className="form-group">
-	                    <label>Verse number: </label>
-											<input type="text" className="form-control"
-												name="verse number"
-	                      value={this.state.verse_number}
-	                      onChange={this.onChangeVerseNumber}
-	                      />
-	                </div>
-									<div className="form-group">
-	                    <label>Verse: </label>
-											<input type="text" className="form-control"
-												name="verse"
-	                      value={this.state.verse_context}
-	                      onChange={this.onChangeVerseContext}
-	                      />
-	                </div>
-	                <div className="form-group">
-	                    <input type="submit" 
-	                      value="Update Verse" 
-	                      className="btn btn-primary"/>
-	                </div>
-	            </form>
-	        </div>
+				<div style={{ marginTop: 10 }}>
+					<h3 align="center">Update Verse</h3>
+					<form onSubmit={this.onSubmit}>
+						<div className="form-group">
+							<label>Tags: </label>
+							<input type="text" className="form-control" 
+								name="tags" 
+								value={this.state.tag_name} 
+								onChange={this.onChangeTagName} 
+							/>
+						</div>
+						<div className="form-group">
+							<label>Book: </label>
+							<input type="text" className="form-control" 
+								name="book" 
+								value={this.state.book_name} 
+								onChange={this.onChangeBookName} 
+							/>
+						</div>
+						<div className="form-group">
+							<label>Chapter: </label>
+							<input type="text" className="form-control" 
+								name="chapter" 
+								value={this.state.chapter_number} 
+								onChange={this.onChangeChapterNumber} 
+							/>
+						</div>
+						<div className="form-group">
+							<label>Verse number: </label>
+							<input type="text" className="form-control" 
+								name="verse number" 
+								value={this.state.verse_number} 
+								onChange={this.onChangeVerseNumber} 
+							/>
+						</div>
+						<div className="form-group">
+							<label>Verse: </label>
+							<input type="text" className="form-control" 
+								name="verse" 
+								value={this.state.verse_context} 
+								onChange={this.onChangeVerseContext} 
+							/>
+						</div>
+						<div className="form-group">
+							<input type="submit" value="Update Verse" className="btn btn-primary" />
+						</div>
+					</form>
+				</div>
 	    )
   	}
 }

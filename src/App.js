@@ -41,22 +41,40 @@ class App extends Component {
       <Router>
         <div className="container">
           <Menu width={ '60%' }>
-            <a id="resp-home" className="menu-item" href="/">Home</a>
-            <a id="resp-create" className="menu-item" href="/create">Add</a>
-            <a id="resp-index" className="menu-item" href="/index">List</a>
+            <a id="resp-home" className="menu-item" href="/">
+              <i className="fa fa-home"></i>
+              <span> Home</span>
+            </a>
+            <a id="resp-create" className="menu-item" href="/create">
+              <i className="fa fa-plus"></i>
+              <span> Add verse</span>
+            </a>
+            <a id="resp-index" className="menu-item" href="/index">
+              <i className="fa fa-list"></i>
+              <span> List verse</span>
+            </a>
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to={'/'} className="navbar-brand">Ask2God</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto" id="header">
                 <li className="nav-item">
-                  <Link to={'/'} className="nav-link" id="home" onClick={handleClick}>Home</Link>
+                  <Link to={'/'} className="nav-link" id="home" onClick={handleClick}>
+                    <i className="fa fa-home"></i>
+                    <span> Home</span>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/create'} className="nav-link" id="create" onClick={handleClick}>Add</Link>
+                  <Link to={'/create'} className="nav-link" id="create" onClick={handleClick}>
+                    <i className="fa fa-plus"></i>
+                    <span> Add</span>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/index'} className="nav-link" id="index" onClick={handleClick}>List</Link>
+                  <Link to={'/index'} className="nav-link" id="index" onClick={handleClick}>
+                    <i className="fa fa-list"></i>
+                    <span> List</span>
+                  </Link>
                 </li>
               </ul>
             </div>

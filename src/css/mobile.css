@@ -65,3 +65,13 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+
+.bm-menu a {
+  color: #b8b7ad;
+  padding-bottom: 10%;
+}
+
+.bm-menu a:hover {
+  color: #ffffff;
+  text-decoration: none;
+}

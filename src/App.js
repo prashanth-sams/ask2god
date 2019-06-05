@@ -12,6 +12,7 @@ import './css/mobile.css';
 function handleClick(e) {
   var header = document.getElementById("header");
   var tabs = header.getElementsByClassName("nav-link");
+  var logo = document.getElementsByClassName("navbar-brand")[0];
 
   for (var i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener("click", function() {
@@ -20,6 +21,12 @@ function handleClick(e) {
       this.className += " active";
     });
   }
+
+  logo.addEventListener("click", function() {
+    document.getElementsByClassName("active")[0].classList.remove('active');
+    var current = document.getElementById("home");
+    current.className += " active";
+  });
 }
 
 class App extends Component {
@@ -55,7 +62,7 @@ class App extends Component {
             </a>
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={'/'} className="navbar-brand">Ask2God</Link>
+            <Link to={'/'} className="navbar-brand" onClick={handleClick}>Ask2God</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto" id="header">
                 <li className="nav-item">

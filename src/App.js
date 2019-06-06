@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./css/common_styles.css"
+import "./css/common_styles.css";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { slide as Menu } from 'react-burger-menu'
+import { slide as Menu } from 'react-burger-menu';
 import Create from './components/create.component';
 import Edit from './components/edit.component';
 import Index from './components/index.component';
+import Search from './components/search.component';
 import './css/tabs.css';
 import './css/mobile.css';
+// import ReactLoading from 'react-loading';
 
 function handleClick(e) {
   var header = document.getElementById("header");
@@ -38,6 +40,8 @@ class App extends Component {
       document.getElementById("create").className += " active";
     } else if (window.location.pathname.includes('/index') && window.location.pathname.length > 2) {
       document.getElementById("index").className += " active";
+    } else if (window.location.pathname.includes('/search') && window.location.pathname.length > 2) {
+      document.getElementById("search").className += " active";
     } else {
       console.log('unknown page')
     }
@@ -59,6 +63,10 @@ class App extends Component {
             <a id="resp-index" className="menu-item" href="/index">
               <i className="fa fa-list"></i>
               <span> List verse</span>
+            </a>
+            <a id="resp-search" className="menu-item" href="/search">
+              <i className="fa fa-search"></i>
+              <span> Search Bible</span>
             </a>
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -83,6 +91,12 @@ class App extends Component {
                     <span> List</span>
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to={'/search'} className="nav-link" id="search" onClick={handleClick}>
+                    <i className="fa fa-search"></i>
+                    <span> Search</span>
+                  </Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -91,6 +105,8 @@ class App extends Component {
               <Route path='/create' component={ Create } />
               <Route path='/edit/:id' component={ Edit } />
               <Route path='/index' component={ Index } />
+              <Route path='/search' component={ Search } />
+              {/* <ReactLoading type={'bars'} color={'#5243AA'} height={'20%'} width={'20%'} /> */}
           </Switch>
         </div>
       </Router>

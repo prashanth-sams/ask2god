@@ -7,6 +7,7 @@ import Create from './components/create.component';
 import Edit from './components/edit.component';
 import Index from './components/index.component';
 import Search from './components/search.component';
+import Timeline from './components/timeline.component';
 import './css/tabs.css';
 import './css/mobile.css';
 // import ReactLoading from 'react-loading';
@@ -106,6 +107,7 @@ class App extends Component {
               <Route path='/edit/:id' component={ Edit } />
               <Route path='/index' component={ Index } />
               <Route path='/search' component={ Search } />
+              <Route path='/timeline' component={ Timeline } />
               {/* <ReactLoading type={'bars'} color={'#5243AA'} height={'20%'} width={'20%'} /> */}
           </Switch>
         </div>

@@ -1,0 +1,28 @@
+.marketing {
+    margin-top: 5.5rem;
+    text-align: center;
+}
+
+img.rounded-circle:hover {
+    cursor:pointer;
+    filter: invert(100%);
+}
+
+img.rounded-circle {
+    margin-bottom: 5%
+}
+
+p {
+    margin-top: 25px;
+}
+
+.btn-secondary {
+    margin-bottom: 10%;
+}
+
+.input-group {
+    width: 75%;
+    margin: 0 auto;
+    float: none;
+    padding-bottom: 10%;
+}

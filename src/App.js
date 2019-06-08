@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./css/common_styles.css";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
+import Home from './components/home.component';
 import Create from './components/create.component';
 import Edit from './components/edit.component';
 import Index from './components/index.component';
@@ -43,6 +44,8 @@ class App extends Component {
       document.getElementById("index").className += " active";
     } else if (window.location.pathname.includes('/search') && window.location.pathname.length > 2) {
       document.getElementById("search").className += " active";
+    } else if (window.location.pathname.includes('/timeline') && window.location.pathname.length > 2) {
+      console.log('timeline page')
     } else {
       console.log('unknown page')
     }
@@ -103,6 +106,7 @@ class App extends Component {
           </nav>
           <br/>
           <Switch>
+              <Route exact path='/' component={ Home } />
               <Route path='/create' component={ Create } />
               <Route path='/edit/:id' component={ Edit } />
               <Route path='/index' component={ Index } />

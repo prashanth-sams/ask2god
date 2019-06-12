@@ -5,16 +5,23 @@ export default class Home extends Component {
 
 	render(){
 		return (
-			
             <div className="container marketing">
                 <div>
 				    <h2 align="center">Search Bible</h2><br />
-                    <div className="input-group md-form form-sm form-2 pl-0">
-                        <input className="form-control my-0 py-1 lime-border" type="text" placeholder="Search keywords [e.g., Jesus]" aria-label="Search" name="search"/>
-                            <div className="input-group-append">
-                                <span className="input-group-text lime lighten-2" id="basic-text1"><i className="fa fa-search text-grey"
-                                    aria-hidden="true"></i></span>
+                    <div className="searchbox-layer1">
+                        <div className="searchbox-layer2">
+                            <div className="icon-search" id="search-icon">
+                                <i className="fa fa-search"></i>
                             </div>
+                            <div className="searchbox-layer3">
+                                <div className="searchbox-layer4">
+                                    <input type="text" className="searchbox-layer5" spellcheck="false" placeholder="Search keywords [e.g., Jesus]" id="search"/>
+                                </div>
+                            </div>
+                        </div>                            
+                        <button type="button" className="search-button">
+                            <span>Search</span>
+                        </button>
                     </div>
 			    </div>
                 <div className="row">

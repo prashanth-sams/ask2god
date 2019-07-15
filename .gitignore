@@ -24,3 +24,4 @@ yarn-error.log*
 
 #dependencias-api
 /api/node_modules
+/data

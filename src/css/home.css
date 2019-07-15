@@ -132,3 +132,31 @@ button span {
     transform: translate3d(0,-50%,0);
     margin: 0 12px;
 }
+
+div[class*=-container], div[class*=-control], div[class*=-container]:focus, div[class*=-control]:focus {
+    height: 100%;
+    width: 100%;
+    border: none;
+    background-color:white;
+}
+
+div[class$=-menu] {
+    margin-top: 0px;
+    border-radius: 0px;
+    text-align: left;
+    text-align: -webkit-left;
+}
+
+div[class$=-option], div[class$=-option]:hover {
+    color: #2d383f;
+    padding: 12px;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 400;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 18px;
+}

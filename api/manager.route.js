@@ -1,3 +1,4 @@
+"use strict";
 // manager.route.js
 
 const express = require('express');

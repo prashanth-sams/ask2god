@@ -9,7 +9,7 @@ services:
       - .:/usr/src/app
     ports:
       - "3000:3000"
-    command: bash -c "npm install && npm rebuild node-sass && npm start"
+    command: bash -c "npm rebuild node-sass && npm start"
     restart: always
 
   backend:

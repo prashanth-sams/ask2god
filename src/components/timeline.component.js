@@ -18,8 +18,8 @@ export default class Timeline extends Component {
                             <h2>God created Adam and then Eve</h2>
                             <br />
                             <p>Genesis 1-2</p>
-                            <i className="fa fa-male fa-icon"></i>
-                            <i className="fa fa-female fa-icon"></i>
+                            <i className="fa fa-male fa-icon" style={{color: "grey", fontSize: "70px"}}></i>
+                            <i className="fa fa-female fa-icon" style={{color: "grey", fontSize: "70px" }}></i>
                         </div>
                     </div>
 
@@ -33,7 +33,7 @@ export default class Timeline extends Component {
                             <h2>Birth of Abraham</h2>
                             <br />
                             <p>Genesis 11:26</p>
-                            <i className="fa fa-child fa-icon"></i>
+                            <i className="fa fa-child fa-icon" style={{color: "grey", fontSize: "70px"}}></i>
                         </div>
                     </div>
 
@@ -60,7 +60,7 @@ export default class Timeline extends Component {
                             <h2>Return of Israelites from Egypt</h2>
                             <br />
                             <p>God gave 10 commandments to Israelites at Mt. Sinai through Moses - Exodus 20</p>
-                            <i className="fa fa-file-text-o fa-icon"></i>
+                            <i className="fa fa-file-text-o fa-icon" style={{color: "grey", fontSize: "70px"}}></i>
                         </div>
                     </div>
 
@@ -74,7 +74,7 @@ export default class Timeline extends Component {
                             <h2>Moses dies</h2>
                             <br />
                             <p>Joushua leads next generation of Israelities into Canaan - Joshua 1</p>
-                            <i className="fa fa-long-arrow-right fa-icon"></i>
+                            <i className="fa fa-long-arrow-right fa-icon" style={{color: "grey", fontSize: "70px"}}></i>
                         </div>
                     </div>
 
@@ -88,7 +88,7 @@ export default class Timeline extends Component {
                             <h2>Birth of Samuel</h2>
                             <br />
                             <p>1 Samuel 1</p>
-                            <i className="fa fa-child fa-icon"></i>
+                            <i className="fa fa-child fa-icon" style={{color: "grey", fontSize: "70px"}}></i>
                         </div>
                     </div>
 
@@ -102,7 +102,7 @@ export default class Timeline extends Component {
                             <h2>David becomes King</h2>
                             <br />
                             <p>2 Samuel 2</p>
-                            <i className="fas fa-crown fa-icon"></i>
+                            <i className="fas fa-crown fa-icon" style={{color: "grey", fontSize: "70px"}}></i>
                         </div>
                     </div>
 
@@ -116,7 +116,7 @@ export default class Timeline extends Component {
                             <h2>Solomon becomes King</h2>
                             <br />
                             <p>1 Kings 1:39</p>
-                            <i className="fa fa-king"></i>
+                            <i className="fa fa-king" style={{color: "grey", fontSize: "70px"}}></i>
                         </div>
                     </div>
 

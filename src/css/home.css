@@ -94,6 +94,31 @@ p {
     margin: 0;
 }
 
+.search-button:focus {
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+.search-button:hover, .search-button:active  {
+    background-color: #4939a3
+}
+
+#search-page-bar {
+    height: 50px;
+    border-radius: 0 2px 2px 0;
+    font-size: 16px;
+}
+
+#search-page-bar:focus {
+  -moz-box-shadow: 0 0 5px rgb(107, 105, 105);
+  -webkit-box-shadow: 0 0 5px rgb(107, 105, 105);
+  box-shadow: 0 0 5px rgb(107, 105, 105);
+  border-color: hsl(0,0%,80%);
+  background-color: hsl(0,0%,100%);
+  border-style: solid;
+  padding: 0px 0px 0px 5px;
+  border: 1px solid rgb(107, 105, 105);
+}
+
 button span {
     color: white;
 }
@@ -136,7 +161,6 @@ button span {
 div[class*=-container], div[class*=-control], div[class*=-container]:focus, div[class*=-control]:focus {
     height: 100%;
     width: 100%;
-    border: none;
     background-color:white;
 }
 
@@ -159,4 +183,10 @@ div[class$=-option], div[class$=-option]:hover {
     overflow: hidden;
     cursor: pointer;
     border-radius: 18px;
+}
+
+#timeline-label {
+    color: white;
+    background-color: #28a745;
+    border-radius: 0%;
 }

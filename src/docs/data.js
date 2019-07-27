@@ -34,6 +34,8 @@ export const colourOptions = [
     { value: 'gay', label: 'Gay', color: '#253858' },
     { value: 'lesbian', label: 'Lesbian', color: '#253858' },
     { value: 'bisexual', label: 'Bisexual', color: '#253858' },
+    { value: 'tattoo', label: 'Tattoo', color: '#253858' },
+    { value: 'alcohol', label: 'Alcohol', color: '#253858' },
 
     // preachings
     { value: 'gospel', label: 'Gospel', color: '#253858' },

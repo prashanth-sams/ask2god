@@ -76,10 +76,12 @@ export default class Home extends Component {
                                     />
                                 </div>
                             </div>
-                        </div>                            
-                        <button type="button" className="search-button">
-                            <span>Search</span>
-                        </button>
+                        </div>
+                        <a href="/search">
+                            <button type="button" className="search-button">
+                                <span>Search</span>
+                            </button>
+                        </a>
                     </div>
 			    </div>
                 <div className="row">

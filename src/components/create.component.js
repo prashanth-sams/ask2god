@@ -96,7 +96,7 @@ export default class Create extends Component<*, State> {
 		return (
 			<div style={{marginTop: 10}}>
 				<h3 align="center">Add Verse</h3>
-          <form onSubmit={this.onSubmit.bind(this)}>
+          			<form onSubmit={this.onSubmit.bind(this)}>
 						<div className="form-group" style={{ fontSize: '0.9rem' }}>
 							<Select
 								name="tags"
@@ -109,7 +109,7 @@ export default class Create extends Component<*, State> {
 								styles={{ multiValueLabel: (base) => ({ ...base, backgroundColor: colourOptions[2].color, color: 'white' }) }}
 								required
 							/>
-            </div>
+            			</div>
 						<div className="form-group">
 							<input type="text" className="form-control"
 								name="book"
@@ -118,7 +118,7 @@ export default class Create extends Component<*, State> {
 								onChange={this.onChangeBookName}
 								required
 							/>
-            </div>
+            			</div>
 						<div className="form-group">
 							<input type="text" className="form-control"
 								name="chapter"
@@ -135,8 +135,8 @@ export default class Create extends Component<*, State> {
 								value={this.state.verse_number}
 								onChange={this.onChangeVerseNumber}
 								required
-              />
-            </div>
+              				/>
+            			</div>
 						<div className="form-group">
 							<input type="text" className="form-control"
 								name="verse"
@@ -144,13 +144,13 @@ export default class Create extends Component<*, State> {
 								value={this.state.verse_context}
 								onChange={this.onChangeVerseContext}
 								required
-              />
-            </div>
+              				/>
+            			</div>
 						<div className="form-group">
 							<input type="submit" value="Add Verse" className="btn btn-primary"/>
-            </div>
-          </form>
-        </div>
+            			</div>
+         			 </form>
+        		</div>
 		)
 	}
 }

@@ -21,7 +21,7 @@ body{
     
     &:last-child {
       text-align: left;
-      padding-bottom: 40px !important;
+      padding-bottom: 70px !important;
     }
   }
   
@@ -96,6 +96,22 @@ body{
     max-width: max-content;
     margin: auto;
     padding: 10px 20px;
+    padding: 5px 15px 5px 10px;
+
+    // visibility: visible;
+    // -webkit-animation: cd-bounce-2 0.6s;
+    // -moz-animation: cd-bounce-2 0.6s;
+    // animation: cd-bounce-2 0.6s;
+  }
+
+  .timeline-content p {
+    background: #4a4a4a;
+    border-top: 1px solid #eee;
+    color: white;
+    padding: 1em;
+    margin-top: 5%;
+    margin-bottom: -3%;
+    border-radius: 6px 6px 6px 6px;
   }
   
   .timeline-content{
@@ -112,7 +128,7 @@ body{
   }
   
   &:not(:last-child) .timeline-content > .fa-icon{
-    margin-bottom: 70px;
+    margin-bottom: 20px;
   }
 }
 

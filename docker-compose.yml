@@ -1,0 +1,41 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: web
+    image: node:latest
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3000:3000"
+    command: bash -c "npm rebuild node-sass && npm start"
+    restart: always
+
+  backend:
+    container_name: backend
+    image: node:latest
+    working_dir: /usr/src/app/api
+    ports:
+      - "4000:4000"
+    volumes:
+      - .:/usr/src/app
+    links:
+      - mongo
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_HOST=mongo
+      - MONGO_URL=mongodb://mongo:27017/
+    command: bash -c "sleep 20 && npm start"
+    restart: always
+  
+  mongo:
+    container_name: mongo
+    hostname: mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data:/data/db
+    restart: always

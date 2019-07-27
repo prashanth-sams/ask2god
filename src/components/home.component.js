@@ -1,13 +1,63 @@
 import React , { Component } from 'react';
+import Select from 'react-select';
 import './../css/home.css';
+import { colourOptions } from './../docs/data';
+
+
+const style = {
+    // width: '3px',
+    control: (props, state) => ({
+      ...props,
+      border: state.isFocused ? 0 : 0,
+      // This line disable the blue border
+      boxShadow: state.isFocused ? 0 : 0,
+      "&:hover": {
+        border: state.isFocused ? 0 : 0
+      }
+    }),
+
+    input: (props) => ({
+        ...props,
+        maxLength: 5
+    }),
+
+    multiValueLabel: (props) => ({ 
+        ...props, 
+        backgroundColor: colourOptions[2].color,
+        color: 'white',
+    })
+};
 
 export default class Home extends Component {
+    constructor(props){
+        super(props);
+        this.handleSelectChange = this.handleSelectChange.bind(this);
+
+        this.state = {
+            show: false
+        }
+    }
+
+    // this section needs update
+    handleSelectChange( value ) {
+        if ( value.length >= 2 ) {
+            this.setState( {
+                show: true
+            });
+
+            if(this.state.show) { 
+                // return (div[class$=-control]{background-color: white; });
+            } else { 
+                // return (<a onClick={this.onClick}> press me </a>);
+            }
+        }
+    }
 
 	render(){
 		return (
             <div className="container marketing">
                 <div>
-				    <h2 align="center">Search Bible</h2><br />
+				    <h2 align="center">Bible Search</h2><br />
                     <div className="searchbox-layer1">
                         <div className="searchbox-layer2">
                             <div className="icon-search" id="search-icon">
@@ -15,13 +65,23 @@ export default class Home extends Component {
                             </div>
                             <div className="searchbox-layer3">
                                 <div className="searchbox-layer4">
-                                    <input type="text" className="searchbox-layer5" spellcheck="false" placeholder="Search keywords [e.g., Jesus]" id="search"/>
+                                    <Select
+                                        isMulti={true}
+                                        onChange={this.handleSelectChange}
+                                        options={colourOptions}
+                                        placeholder="Search keywords [e.g., Jesus]"
+                                        autoFocus
+                                        required
+                                        styles={style}
+                                    />
                                 </div>
                             </div>
-                        </div>                            
-                        <button type="button" className="search-button">
-                            <span>Search</span>
-                        </button>
+                        </div>
+                        <a href="/search">
+                            <button type="button" className="search-button">
+                                <span>Search</span>
+                            </button>
+                        </a>
                     </div>
 			    </div>
                 <div className="row">

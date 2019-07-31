@@ -1,9 +1,25 @@
 import React , { Component } from 'react';
-import './../css/timeline.scss'
+import './../css/timeline.scss';
+import './../css/lightbox.css';
+import ReactModal from 'react-modal';
 
 export default class Timeline extends Component {       
-    constructor(props){
-		super(props);
+    constructor () {
+        super();
+        this.state = {
+          showModal: false
+        };
+        
+        this.handleOpenModal = this.handleOpenModal.bind(this);
+        this.handleCloseModal = this.handleCloseModal.bind(this);
+    }
+      
+    handleOpenModal () {
+        this.setState({ showModal: true });
+    }
+      
+    handleCloseModal () {
+        this.setState({ showModal: false });
     }
 
     render(){
@@ -160,6 +176,20 @@ export default class Timeline extends Component {
                         <div className="timeline-content">
                             <h2>Birth of Martin Luther</h2>
                             <br />
+                            <i className="fa fa-child fa-icon" style={{color: "grey", fontSize: "70px"}}></i>
+                            <div id="main">
+                                <button onClick={this.handleOpenModal}>Trigger Modal</button>
+                                <ReactModal 
+                                    isOpen={this.state.showModal}
+                                    contentLabel="onRequestClose Example"
+                                    onRequestClose={this.handleCloseModal}
+                                    className="Modal"
+                                    overlayClassName="Overlay"
+                                >
+                                    <p>Modal text!</p>
+                                    <button onClick={this.handleCloseModal}>Close Modal</button>
+                                </ReactModal>
+                            </div>
                             <p>He came to reject several teachings and practices of the Roman Catholic Church. Luther translated the New Testament from Greek into German</p>
                             <p>Nationality: Germany <br /> Spouse: Katharina von Bora</p>
                         </div>

@@ -1,3 +1,5 @@
+@import '~aos/dist/aos.css';
+
 input[type=text], textarea {
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;

@@ -4,6 +4,10 @@ import { BrowserRouter } from 'react-router-dom';
 import './../node_modules/font-awesome/css/font-awesome.min.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ReactModal from 'react-modal';
+import AOS from 'aos';
+
+ReactModal.setAppElement('#modal');
 
 ReactDOM.render(
 	<BrowserRouter>
@@ -14,3 +18,4 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
+AOS.init();

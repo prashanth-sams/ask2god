@@ -54,10 +54,14 @@ export default class Home extends Component {
 
     // this section needs update
     handleSelectChange( value ) {
-        this.setState({
-            searchtags : value[0].value
-        })
+        if (value[0] !== undefined) {
+            this.setState({
+                searchtags : value[0].value
+            })
+        } else {
 
+        }
+        
         if ( value.length >= 2 ) {
             this.setState( {
                 show: true

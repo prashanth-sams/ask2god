@@ -1,4 +1,5 @@
-# Manager Application
+# Ask2God
+[![Build Status](https://travis-ci.org/prashanth-sams/a2g_manager.svg?branch=master)](https://travis-ci.org/prashanth-sams/a2g_manager)
 
 ### library installation
 
@@ -14,7 +15,7 @@ npm start
 > [http://localhost:3000](http://localhost:3000)
 
 
-# Manager DataBase
+# A2G backend
 
 ### library installation
 

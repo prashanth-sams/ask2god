@@ -31,6 +31,14 @@ managerRoutes.route('/').get(function (req, res) {
   });
 });
 
+// Filter with tag_name
+managerRoutes.route('/search/:tag_name').get(function (req, res) {
+  let tag_name = req.params.tag_name;
+  Manager.findOne({ tag_name: tag_name }, function(err, data){
+    res.json(data);
+  });
+});
+
 // Defined edit route
 managerRoutes.route('/edit/:id').get(function (req, res) {
   let id = req.params.id;

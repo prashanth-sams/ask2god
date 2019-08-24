@@ -1,5 +1,6 @@
 import React , { Component } from 'react';
 import Select from 'react-select';
+import axios from 'axios';
 import './../css/home.css';
 import { colourOptions } from './../docs/data';
 
@@ -32,14 +33,31 @@ export default class Home extends Component {
     constructor(props){
         super(props);
         this.handleSelectChange = this.handleSelectChange.bind(this);
+        this.onClick= this.onClick.bind(this);
 
         this.state = {
-            show: false
+            show: false,
         }
+        axios.defaults.baseURL = 'http://localhost:4000/manager';
+    }
+
+    onClick(e){
+		// e.preventDefault();
+        const tags=this.state.searchtags;
+		axios.get(`/search/${tags}`).then(res => {           
+            console.log(res.data)
+            this.setState({manager : res.data});
+		}).catch(function(error){
+			console.log(error);
+		})
     }
 
     // this section needs update
     handleSelectChange( value ) {
+        this.setState({
+            searchtags : value[0].value
+        })
+
         if ( value.length >= 2 ) {
             this.setState( {
                 show: true
@@ -77,7 +95,7 @@ export default class Home extends Component {
                                 </div>
                             </div>
                         </div>
-                        <a href="/search">
+                        <a onClick={this.onClick.bind(this)} href='/search'>
                             <button type="button" className="search-button">
                                 <span>Search</span>
                             </button>

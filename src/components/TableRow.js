@@ -23,10 +23,12 @@ class TableRow extends Component {
 
     super(props);
     this.delete = this.delete.bind(this);
+    
+    axios.defaults.baseURL = 'http://localhost:4000/manager';
   }
 
   delete(){
-    axios.get('http://localhost:4000/manager/delete/'+this.props.obj._id)
+    axios.get('/delete/'+this.props.obj._id)
             .then(res => {
               console.log('deleted');
               this.props.delete(this.props.indice);

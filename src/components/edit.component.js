@@ -6,22 +6,23 @@ export default class Edit extends Component {
 	    super(props);
 	    this.onChangeTagName = this.onChangeTagName.bind(this);
 	    this.onChangeBookName = this.onChangeBookName.bind(this);
-			this.onChangeChapterNumber = this.onChangeChapterNumber.bind(this);
-			this.onChangeVerseNumber = this.onChangeVerseNumber.bind(this);
-			this.onChangeVerseContext = this.onChangeVerseContext.bind(this);
+		this.onChangeChapterNumber = this.onChangeChapterNumber.bind(this);
+		this.onChangeVerseNumber = this.onChangeVerseNumber.bind(this);
+		this.onChangeVerseContext = this.onChangeVerseContext.bind(this);
 	    this.onSubmit = this.onSubmit.bind(this);
 
 	    this.state = {
-	      tag_name: '',
-	      book_name: '',
-				chapter_number:'',
-				verse_number:'',
-				verse_context:''
-	    }
+			tag_name: '',
+	      	book_name: '',
+			chapter_number:'',
+			verse_number:'',
+			verse_context:''
+		}
+		axios.defaults.baseURL = 'http://localhost:4000/manager';
   	}
 
   	componentDidMount() {
-      axios.get('http://localhost:4000/manager/edit/'+this.props.match.params.id)
+      axios.get('/edit/'+this.props.match.params.id)
           .then(response => {
               this.setState({ 
                 tag_name: response.data.tag_name, 
@@ -42,7 +43,7 @@ export default class Edit extends Component {
 	    });
   	}
 	
-		onChangeBookName(e) {
+	onChangeBookName(e) {
 	    this.setState({
 	      book_name: e.target.value
 	    })  
@@ -55,9 +56,9 @@ export default class Edit extends Component {
 	}
 
 	onChangeVerseNumber(e) {
-			this.setState({
-				verse_number: e.target.value
-			})
+		this.setState({
+			verse_number: e.target.value
+		})
 	}
 
 	onChangeVerseContext(e) {
@@ -75,7 +76,7 @@ export default class Edit extends Component {
 				verse_number: this.state.verse_number,
 				verse_context: this.state.verse_context
 	    };
-	    axios.post('http://localhost:4000/manager/update/'+this.props.match.params.id, obj)
+	    axios.post('/update/'+this.props.match.params.id, obj)
 	        .then(res => console.log(res.data));
     
     	this.props.history.push('/index');

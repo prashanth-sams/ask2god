@@ -1,0 +1,38 @@
+.searchbox-layer0 {
+  float: left;
+  width: 100%;
+  max-width: 836px;
+  margin-top: 42px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-shadow: 0 1px 8px 0 rgba(0,0,0,.25);
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,.25);
+}
+
+.search-top {
+  flex-direction: column;
+  display: flex;
+}
+
+.div[class*=-menu] {
+  left: 0;
+}
+
+.search-row {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 85%;
+}
+
+div[class$=-menu] {
+  padding: 5px 10px;
+  left: 0;
+}
+
+div[class*=-container] {
+  position: inherit;
+}

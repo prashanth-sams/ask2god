@@ -46,7 +46,7 @@ export default class Search extends Component {
 			})
 			.catch(function(error){
 				console.log(error);
-			})
+            })
 	}
 
     onClick( event ){
@@ -93,6 +93,7 @@ export default class Search extends Component {
                                     onChange={this.handleSelectChange}
                                     options={colourOptions}
                                     placeholder="Search keywords [e.g., Jesus]"
+                                    defaultValue={[{ label: "Peace", value: "peace" }]}
                                     autoFocus
                                     required
                                     styles={style}

@@ -73,10 +73,10 @@ export default class Search extends Component {
     }
 
     tabRow(){
-		return this.state.manager.map((object, i) => {
-			return <SearchRow obj={object} key={i}/>;
-		});
-	}
+        return this.state.manager.map((object, i) => {
+            return <SearchRow obj={object} key={i}/>;
+        });
+    }
 
 	render(){
 		return (

@@ -112,12 +112,19 @@ export default class Search extends Component {
                             { this.tabRow() }
                         </div>
                     </div>
-                    <div className="content-container-right">
+                    <div className="content-container-right" id="image-area">
                         <div>
-                            IMAGE CONTENT
+                            <img className="" src="https://i.imgur.com/FaFaaIX.jpg" alt="peace" width="367" height="250"/>
                         </div>
-                        <div>
-                            DETAILS AREA
+                        <div className="details-area">
+                            <div className="infobox-left">
+                                <b>Mentioned in Bible</b>
+                            </div>
+                            <div>
+                                <div className="infobox-right">
+                                    235 times
+                                </div>
+                            </div>
                         </div>
                     </div>                           
                 </div>

@@ -11,6 +11,7 @@
   flex-direction: row;
   -webkit-box-shadow: 0 1px 8px 0 rgba(0,0,0,.25);
   box-shadow: 0 1px 8px 0 rgba(0,0,0,.25);
+  margin-bottom: 30px;
 }
 
 .search-top {
@@ -25,7 +26,6 @@
 .search-row {
   display: flex;
   flex-direction: column-reverse;
-  width: 85%;
 }
 
 div[class$=-menu] {
@@ -43,4 +43,20 @@ div[class*=-option], div[class*=-option]:hover {
 
 div[class*=-option]:hover {
   background-color: #e8e8e8;
+}
+
+.content-area {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.content-container-left {
+  width: calc(100% - 395px) !important;
+  min-width: calc(100% - 395px);
+}
+
+.content-container-right {
+  width: 375px !important;
+  min-width: 375px;
 }

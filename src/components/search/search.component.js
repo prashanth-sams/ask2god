@@ -105,18 +105,28 @@ export default class Search extends Component {
                         <span>Search</span>
                     </button>
                 </div>
-                <div>
-                    <ul>
+                <div className="content-area">
+                    <div className="content-container-left">
+                        <h2 style={{color: '#616161'}}>/{this.state.tag}</h2>
                         <div>
-                            <br />
-                            <h2 style={{color: '#616161'}}>/{this.state.tag}</h2>
-                            <table>
-                                <tbody>
-                                    { this.tabRow() }
-                                </tbody>
-                            </table>
-                        </div>                            
-                    </ul> 
+                            { this.tabRow() }
+                        </div>
+                    </div>
+                    <div className="content-container-right" id="image-area">
+                        <div>
+                            <img className="" src="https://i.imgur.com/FaFaaIX.jpg" alt="peace" width="367" height="250"/>
+                        </div>
+                        <div className="details-area">
+                            <div className="infobox-left">
+                                <b>Mentioned in Bible</b>
+                            </div>
+                            <div>
+                                <div className="infobox-right">
+                                    235 times
+                                </div>
+                            </div>
+                        </div>
+                    </div>                           
                 </div>
 			</div>
 		)

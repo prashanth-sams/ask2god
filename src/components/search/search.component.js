@@ -2,7 +2,7 @@ import React , { Component } from 'react';
 import Select from 'react-select';
 import { colourOptions } from '../../docs/data';
 import axios from 'axios';
-import './_style.css'
+import './_style.css';
 import SearchRow from './SearchRow';
 
 const style = {
@@ -120,10 +120,8 @@ export default class Search extends Component {
                             <div className="infobox-left">
                                 <b>Mentioned in Bible</b>
                             </div>
-                            <div>
-                                <div className="infobox-right">
-                                    235 times
-                                </div>
+                            <div className="infobox-right">
+                                429 times [KJV version]
                             </div>
                         </div>
                     </div>                           

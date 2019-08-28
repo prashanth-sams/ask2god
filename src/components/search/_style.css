@@ -72,6 +72,7 @@ div[class*=-option]:hover {
 
 .details-area {
   margin-top: 15px;
+  display: flex;
 }
 
 .infobox-left {
@@ -80,8 +81,12 @@ div[class*=-option]:hover {
   vertical-align: top;
   text-align: left;
   padding-top: 5%;
+  padding-left: 5%;
 }
 
 .infobox-right {
   font-size: 14px;
+  padding-top: 5%;
+  padding-left: 15%;
+  margin-bottom: 10%;
 }

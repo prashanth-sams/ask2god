@@ -1,11 +1,10 @@
-describe ('search component', () => {
+import React from 'react';
+import Search from './search.component.js'
+import { mount, shallow } from 'enzyme';
 
-    beforeEach (() => {
-        console.log('Before each!');
-    });
-
+describe ('<Search />', () => {
     it (`should display the list of search results`, () => {
-        expect(2 + 2 ).toEqual(4);
+        const component = shallow(<Search />);
+        expect((component).exists()).toBe(true);
     });
-
 });

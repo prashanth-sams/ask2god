@@ -7,3 +7,4 @@ install:
   - npm install -g jest-cli
 script:
   - npm test
+  - bash <(curl -s https://codecov.io/bash) -cF javascript

@@ -1,7 +1,7 @@
 import React , { Component } from 'react';
 import Select, { components } from 'react-select';
 import axios from 'axios';
-import { colourOptions } from './../docs/data';
+import { colourOptions } from '../../docs/data';
 
 const MultiValueLabel = (props) => {
 	return (<components.MultiValueLabel {...props}/>);

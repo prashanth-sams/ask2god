@@ -1,8 +1,8 @@
 import React , { Component } from 'react';
 import Select from 'react-select';
 import axios from 'axios';
-import './../css/home.css';
-import { colourOptions } from './../docs/data';
+import './../../css/home.css';
+import { colourOptions } from '../../docs/data';
 
 
 const style = {

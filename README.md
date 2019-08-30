@@ -2,7 +2,6 @@
 [![Build Status](https://travis-ci.org/prashanth-sams/a2g_manager.svg?branch=master)](https://travis-ci.org/prashanth-sams/a2g_manager)
 [![codecov](https://codecov.io/gh/prashanth-sams/a2g_manager/branch/master/graph/badge.svg)](https://codecov.io/gh/prashanth-sams/a2g_manager)
 
-
 > Ask and it will be given to you; seek and you will find - `Matthew 7:7`
 
 ### library installation

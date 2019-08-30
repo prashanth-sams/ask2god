@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
-import './../css/timeline.scss';
-import './../css/lightbox.css';
+import './../../css/timeline.scss';
+import './../../css/lightbox.css';
 import { Button } from "react-bootstrap";
 
 export default class Timeline extends Component {

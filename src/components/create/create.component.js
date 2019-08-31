@@ -27,7 +27,7 @@ export default class Create extends Component {
 		};
 	}
 
-	onChangeTagName(newValue: any, actionMeta: any) {
+	onChangeTagName(newValue, actionMeta) {
 		console.group('Value Changed');
 		console.log(newValue);
 		console.log(`action: ${actionMeta.action}`);

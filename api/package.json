@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,7 @@
     "lodash": ">=4.17.15"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "supertest": "^4.0.2"
   }
 }

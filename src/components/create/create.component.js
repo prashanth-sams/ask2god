@@ -25,6 +25,7 @@ export default class Create extends Component {
 			verse_number: '',
 			verse_context: ''
 		};
+		axios.defaults.baseURL = 'http://localhost:4000/manager';
 	}
 
 	onChangeTagName(newValue, actionMeta) {
@@ -80,7 +81,7 @@ export default class Create extends Component {
 			verse_context : this.state.verse_context
 		};
 
-		axios.post('http://localhost:4000/manager/add', obj)
+		axios.post('/add', obj)
 			.then( res=> {
 				console.log(res.data)
 			});

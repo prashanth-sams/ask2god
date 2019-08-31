@@ -1,4 +1,5 @@
 # Ask2God
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7cdb996f24384f4194f6a6cd288e24ad)](https://app.codacy.com/app/prashanth-sams/a2g_manager?utm_source=github.com&utm_medium=referral&utm_content=prashanth-sams/a2g_manager&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.org/prashanth-sams/a2g_manager.svg?branch=master)](https://travis-ci.org/prashanth-sams/a2g_manager)
 [![codecov](https://codecov.io/gh/prashanth-sams/a2g_manager/branch/master/graph/badge.svg)](https://codecov.io/gh/prashanth-sams/a2g_manager)
 

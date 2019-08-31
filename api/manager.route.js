@@ -15,7 +15,7 @@ managerRoutes.route('/add').post(function (req, res) {
       res.status(200).json({'manager': 'manager in added successfully'});
     })
     .catch(err => {
-    res.status(400).send("unable to save to database");
+      res.status(400).send("unable to save to database");
     });
 });
 

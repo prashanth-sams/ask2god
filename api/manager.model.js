@@ -4,9 +4,9 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Manager
 let Manager = new Schema({
-  tag_name: {
+  tag_name: [{
     type: String
-  },
+  }],
   book_name: {
     type: String
   },

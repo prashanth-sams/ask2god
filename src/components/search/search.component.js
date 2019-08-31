@@ -40,6 +40,7 @@ export default class Search extends Component {
     }
 
     componentDidMount(){
+        this.state.searchtags=["peace"]
 		axios.get(`/search/${this.state.tag}`)
 			.then(response =>{
 				this.setState({manager : response.data});
@@ -49,7 +50,7 @@ export default class Search extends Component {
             })
 	}
 
-    onClick( event ){
+    onClick(e){
 		// e.preventDefault();
         const tags=this.state.searchtags;
         this.state.tag=tags;

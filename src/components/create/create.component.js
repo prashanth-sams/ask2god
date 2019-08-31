@@ -81,7 +81,9 @@ export default class Create extends Component<*, State> {
 		};
 
 		axios.post('http://localhost:4000/manager/add', obj)
-			.then( res=> console.log(res.data));
+			.then( res=> {
+				console.log(res.data)
+			});
 
 		this.setState({
 			tag_name : '',

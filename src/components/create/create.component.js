@@ -7,7 +7,7 @@ const MultiValueLabel = (props) => {
 	return (<components.MultiValueLabel {...props}/>);
 };
 
-export default class Create extends Component<*, State> {
+export default class Create extends Component {
 
 	constructor(props){
 		super(props);

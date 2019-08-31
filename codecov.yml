@@ -1,17 +1,36 @@
 coverage:
+  branch: master
+  bot: null
+
   status:
+    precision: 2
+    round: down
+    range: "70...100"
+
     project:
       default:
         # Fail the status if coverage drops by >= 3%
-        threshold: 3
+        # threshold: 3
+        target: 0%
+        branches: null
+        threshold: null
+
     patch:
       default:
-        threshold: 3
+        target: 0%
+        branches: null
+        # threshold: 3
+    
+    changes:
+      default:
+        branches: null
 
 comment:
-  layout: "reach, diff, flags, files"
+  layout: "header, diff, changes, sunburst, uncovered, tree"
+  branches: null
   behavior: default
-  require_changes: false  # if true: only post the comment if coverage changes
-  require_base: no        # [yes :: must have a base report to post]
-  require_head: yes       # [yes :: must have a head report to post]
+  # require_changes: false  # if true: only post the comment if coverage changes
+  # require_base: no        # [yes :: must have a base report to post]
+  # require_head: yes       # [yes :: must have a head report to post]
+  # layout: "reach, diff, flags, files"
   # branches: null          # branch names that can post comment

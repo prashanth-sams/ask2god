@@ -34,7 +34,7 @@ export default class Search extends Component {
         super(props);
         this.handleSelectChange = this.handleSelectChange.bind(this);
         this.onClick= this.onClick.bind(this);
-        this.state = {manager : [], tag: 'peace'};
+        this.state = {manager : [], tag: 'peace', tag_label: null};
 
         axios.defaults.baseURL = 'http://localhost:4000/manager';
     }
@@ -53,10 +53,9 @@ export default class Search extends Component {
     onClick(e){
 		// e.preventDefault();
         const tags=this.state.searchtags;
-        this.state.tag=tags;
 		axios.get(`/search/${tags}`).then(response => {           
             console.log(response.data)
-            this.setState({manager : response.data});
+            this.setState({manager : response.data, tag_label: this.state.searchtags});
 		}).catch(function(error){
 			console.log(error);
 		})
@@ -108,7 +107,7 @@ export default class Search extends Component {
                 </div>
                 <div className="content-area">
                     <div className="content-container-left">
-                        <h2 style={{color: '#616161'}}>/{this.state.tag}</h2>
+                        <h2 style={{color: '#616161'}}>/{this.state.tag_label || this.state.tag}</h2>
                         <div>
                             { this.tabRow() }
                         </div>

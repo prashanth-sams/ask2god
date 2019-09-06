@@ -1,5 +1,5 @@
 import React from 'react';
-import Knowit from './knowit.component.js/index.js'
+import Knowit from './knowit.component.js/index.js';
 import { mount, shallow } from 'enzyme';
 
 describe ('<Knowit />', () => {

@@ -8,7 +8,7 @@ class SearchRow extends Component {
   constructor(props){
     super(props);
     
-    axios.defaults.baseURL = 'http://localhost:4000/keyword';
+    axios.defaults.baseURL = 'http://localhost:4000';
   }
 
   render() {

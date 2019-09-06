@@ -10,7 +10,7 @@ export default class Index extends Component {
 	}
 
 	componentDidMount(){
-		axios.get('http://localhost:4000/manager')
+		axios.get('http://localhost:4000/keyword')
 			.then(response =>{
 				this.setState({manager : response.data});
 			})

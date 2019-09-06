@@ -5,10 +5,10 @@ const express = require('express');
 const managerRoutes = express.Router();
 
 // Require Manager model in our routes module
-let Manager = require('./manager.model');
+var Manager = require('../model/manager.model');
 
 // Defined store route
-managerRoutes.route('/add').post(function (req, res) {
+managerRoutes.route('/keyword/add').post(function (req, res) {
   let manager = new Manager(req.body);
   manager.save()
     .then(manager => {
@@ -20,8 +20,8 @@ managerRoutes.route('/add').post(function (req, res) {
 });
 
 // Defined get data(index or listing) route
-managerRoutes.route('/').get(function (req, res) {
-  Manager.find(function(err, managers){
+managerRoutes.route('/keyword/').get(function (req, res) {
+  Manager.find({ book_name: {$exists: true} }, function(err, managers){
     if(err){
       console.log(err);
     }
@@ -32,7 +32,7 @@ managerRoutes.route('/').get(function (req, res) {
 });
 
 // Filter with tag_name
-managerRoutes.route('/search/:tag_name').get(function (req, res) {
+managerRoutes.route('/keyword/search/:tag_name').get(function (req, res) {
   let tag_name = req.params.tag_name;
   Manager.find({ tag_name: tag_name }, function(err, data){
     res.json(data);
@@ -40,7 +40,7 @@ managerRoutes.route('/search/:tag_name').get(function (req, res) {
 });
 
 // Defined edit route
-managerRoutes.route('/edit/:id').get(function (req, res) {
+managerRoutes.route('/keyword/edit/:id').get(function (req, res) {
   let id = req.params.id;
   Manager.findById(id, function (err, manager){
       res.json(manager);
@@ -48,7 +48,7 @@ managerRoutes.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-managerRoutes.route('/update/:id').post(function (req, res) {
+managerRoutes.route('/keyword/update/:id').post(function (req, res) {
   Manager.findById(req.params.id, function(err, manager) {
     if (!manager)
       res.status(404).send("data is not found");
@@ -70,7 +70,7 @@ managerRoutes.route('/update/:id').post(function (req, res) {
 });
 
 // Defined delete | remove | destroy route
-managerRoutes.route('/delete/:id').get(function (req, res) {
+managerRoutes.route('/keyword/delete/:id').get(function (req, res) {
   Manager.findByIdAndRemove({_id: req.params.id}, function(err, manager){
         if(err) res.json(err);
         else res.json('Successfully removed');

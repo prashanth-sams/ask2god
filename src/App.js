@@ -8,6 +8,7 @@ import Create from './components/create/create.component';
 import Edit from './components/edit/edit.component';
 import Index from './components/index/index.component';
 import Search from './components/search/search.component';
+import Knowit from './components/knowit/knowit.component';
 import Timeline from './components/timeline/timeline.component';
 import './css/tabs.css';
 import './css/mobile.css';
@@ -44,6 +45,8 @@ class App extends Component {
       document.getElementById("index").className += " active";
     } else if (window.location.pathname.includes('/search') && window.location.pathname.length > 2) {
       document.getElementById("search").className += " active";
+    } else if (window.location.pathname.includes('/knowit') && window.location.pathname.length > 2) {
+      document.getElementById("knowit").className += " active";
     } else if (window.location.pathname.includes('/timeline') && window.location.pathname.length > 2) {
       console.log('timeline page')
     } else {
@@ -71,6 +74,9 @@ class App extends Component {
             <a id="resp-search" className="menu-item" href="/search">
               <i className="fa fa-search"></i>
               <span> Search Bible</span>
+            </a>
+            <a id="resp-knowit" className="menu-item" href="/knowit">
+              <span> Know it</span>
             </a>
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -101,6 +107,11 @@ class App extends Component {
                     <span> Search</span>
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to={'/knowit'} className="nav-link" id="knowit" onClick={handleClick}>
+                    <span> Know It</span>
+                  </Link>
+                </li>
               </ul>
             </div>
           </nav>
@@ -111,6 +122,7 @@ class App extends Component {
               <Route path='/edit/:id' component={ Edit } />
               <Route path='/index' component={ Index } />
               <Route path='/search' component={ Search } />
+              <Route path='/knowit' component={ Knowit } />
               <Route path='/timeline' component={ Timeline } />
               {/* <ReactLoading type={'bars'} color={'#5243AA'} height={'20%'} width={'20%'} /> */}
           </Switch>

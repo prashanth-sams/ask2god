@@ -6,7 +6,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./DB');
 
-const managerRoute = require('./manager.route');
+const managerRoute = require('./routes/manager.route');
+const knowitRoute = require('./routes/knowit.route');
 
 mongoose.Promise = global.Promise;
 console.log(config);
@@ -19,7 +20,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use('/manager', managerRoute);
+app.use('/', managerRoute, knowitRoute);
 
 app.listen(PORT, function(){
   console.log('Server is running on Port:',PORT);

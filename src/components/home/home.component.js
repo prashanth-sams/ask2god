@@ -38,7 +38,7 @@ export default class Home extends Component {
         this.state = {
             show: false,
         }
-        axios.defaults.baseURL = 'http://localhost:4000/manager';
+        axios.defaults.baseURL = 'http://localhost:4000/keyword';
     }
 
     onClick(e){

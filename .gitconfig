@@ -1,2 +1,2 @@
 [alias]
-  ff = "!f() { git merge $1; git branch -d $1; }; f"
+  ff = !sh -c 'git merge $1 && git branch -d $1' --

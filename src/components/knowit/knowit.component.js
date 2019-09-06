@@ -1,46 +1,51 @@
 import React , { Component } from 'react';
 import Select from 'react-select';
-import { colourOptions } from '../../docs/data';
 import axios from 'axios';
 import './_style.css';
 import SearchRow from './SearchRow';
+import { questionOptions, groupedOptions } from './data';
 
-const style = {
-    // width: '3px',
-    control: (props, state) => ({
-      ...props,
-      border: state.isFocused ? 0 : 0,
-      // This line disable the blue border
-      boxShadow: state.isFocused ? 0 : 0,
-      "&:hover": {
-        border: state.isFocused ? 0 : 0
-      }
-    }),
+const formatGroupLabel = data => (
+    <div style={groupStyles}>
+        <span>{data.label}</span>
+        <span style={groupBadgeStyles}>{data.options.length}</span>
+    </div>
+);
 
-    input: (props) => ({
-        ...props,
-        maxLength: 5
-    }),
-
-    multiValueLabel: (props) => ({ 
-        ...props, 
-        backgroundColor: colourOptions[2].color,
-        color: 'white',
-    })
+const groupStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
 };
 
-export default class Search extends Component {
+const groupBadgeStyles = {
+    backgroundColor: '#EBECF0',
+    borderRadius: '2em',
+    color: '#172B4D',
+    display: 'inline-block',
+    fontSize: 12,
+    fontWeight: 'normal',
+    lineHeight: '1',
+    minWidth: 1,
+    padding: '0.16666666666667em 0.5em',
+    textAlign: 'center',
+};
+
+export default class Knowit extends Component {
     constructor(props){
         super(props);
-        this.handleSelectChange = this.handleSelectChange.bind(this);
         this.onClick= this.onClick.bind(this);
-        this.state = {manager : [], tag: 'peace', tag_label: null};
+        this.state = {
+            manager : [],
+            tag: 'peace',
+            tag_label: null
+        };
 
-        axios.defaults.baseURL = 'http://localhost:4000/keyword';
+        axios.defaults.baseURL = 'http://localhost:4000/knowit';
     }
 
     componentDidMount(){
-		axios.get(`/search/${this.state.tag}`)
+		axios.get(`/knowit/${this.state.tag}`)
 			.then(response =>{
 				this.setState({manager : response.data});
 			})
@@ -52,23 +57,12 @@ export default class Search extends Component {
     onClick(e){
 		// e.preventDefault();
         const tags=this.state.searchtags || ["peace"];
-		axios.get(`/search/${tags}`).then(response => {           
+		axios.get(`/knowit/${tags}`).then(response => {           
             console.log(response.data)
-            this.setState({manager : response.data, tag_label: this.state.searchtags});
+            this.setState({manager : response.data, tag_label: this.state.knowittags});
 		}).catch(function(error){
 			console.log(error);
 		})
-    }
-
-    handleSelectChange( event ) {
-
-        if (event[0] !== undefined) {
-            this.setState({
-                searchtags : event[0].value
-            })
-        } else {
-
-        }
     }
 
     tabRow(){
@@ -88,15 +82,21 @@ export default class Search extends Component {
                         <div className="searchbox-layer3">
                             <div className="searchbox-layer4">
                                 <Select
-                                    isMulti={true}
-                                    onChange={this.handleSelectChange}
-                                    options={colourOptions}
-                                    placeholder="Search keywords [e.g., Jesus]"
+                                    defaultValue={questionOptions[0]}
+                                    placeholder="Who is Jesus?"
+                                    options={groupedOptions}
+                                    formatGroupLabel={formatGroupLabel}
+                                    autoFocus
+                                    required
+                                    // onChange={this.handleSelectChange}
+                                />
+
+                                {/* <Select
                                     defaultValue={[{ label: "Peace", value: "peace" }]}
                                     autoFocus
                                     required
                                     styles={style}
-                                />
+                                /> */}
                             </div>
                         </div>
                     </div>
@@ -104,7 +104,15 @@ export default class Search extends Component {
                         <span>Search</span>
                     </button>
                 </div>
-                <div className="content-area">
+                {/* <div>
+                    <p>
+                        {this.item.map}
+                        asdas
+                    </p>
+                </div> */}
+
+
+                {/* <div className="content-area">
                     <div className="content-container-left">
                         <h2 style={{color: '#616161'}}>/{this.state.tag_label || this.state.tag}</h2>
                         <div>
@@ -124,7 +132,7 @@ export default class Search extends Component {
                             </div>
                         </div>
                     </div>                           
-                </div>
+                </div> */}
 			</div>
 		)
 	}

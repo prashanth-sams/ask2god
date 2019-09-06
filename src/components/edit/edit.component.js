@@ -18,7 +18,7 @@ export default class Edit extends Component {
 			verse_number:'',
 			verse_context:''
 		}
-		axios.defaults.baseURL = 'http://localhost:4000/manager';
+		axios.defaults.baseURL = 'http://localhost:4000/keyword';
   	}
 
   	componentDidMount() {

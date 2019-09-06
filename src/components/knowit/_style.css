@@ -1,0 +1,24 @@
+div[class*=-control]:hover {
+  border-color: transparent;
+  box-shadow: 0 0 0px #5243AA;
+}
+
+div[class*="css-1szy77t-control"] {
+  box-shadow: 0 0 0px #5243AA;
+}
+
+div[class*="-option"] {
+  background-color: transparent;
+}
+
+div[class*=-control], div[class*="css-1szy77t-control"]:focus, div[class*="css-1szy77t-control"]:hover {
+  border-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 0px #5243AA;
+  border-style: hidden;
+  border-width: 0px;
+  font-size: inherit;
+}
+
+div[class*="-singleValue"] {
+  color: rgba(74, 74, 74, 0.9);
+}

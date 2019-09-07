@@ -19,9 +19,9 @@ knowitRoutes.route('/knowit/add').post(function (req, res) {
 });
 
 // Filter with query_text
-knowitRoutes.route('/knowit/search/:tag_name').get(function (req, res) {
-  let tag_name = req.params.tag_name;
-  Knowit.find({ tag_name: tag_name }, function(err, data){
+knowitRoutes.route('/knowit/search/:value').get(function (req, res) {
+  let value = req.params.value;
+  Knowit.find({ value: value }, function(err, data){
     res.json(data);
   });
 });

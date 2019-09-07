@@ -1,15 +1,15 @@
 export const questionOptions = [
-    { value: 'jesus_1', label: 'Who is Jesus?', color: '#00B8D9', isFixed: true },
-    { value: 'jesus_2', label: 'Why do we need Jesus?', color: '#0052CC', isDisabled: false },
-    { value: 'jesus_3', label: 'Why Jesus shed his blood?', color: '#5243AA' },
-    { value: 'jesus_4', label: 'Is Jesus alive?', color: '#FF5630', isFixed: true },
-    { value: 'jesus_5', label: 'How powerful Jesus is?', color: '#FF8B00' },
-    { value: 'jesus_6', label: 'Who is the first born of all creation?', color: '#FFC400' },
-    { value: 'jesus_7', label: 'Who created the earth?', color: '#36B37E' },
-    { value: 'jesus_8', label: 'Who created the angels and beings on heaven?', color: '#00875A' },
-    { value: 'jesus_9', label: 'From whom are we created?', color: '#253858' },
-    { value: 'jesus_10', label: 'Who is the first born from the dead?', color: '#666666' },
-    { value: 'jesus_11', label: "What is Jesus's expection on us?", color: '#666666' },
+    { value: 'jesus-1', label: 'Who is Jesus?', color: '#00B8D9', isFixed: true },
+    { value: 'jesus-2', label: 'Is Jesus alive?', color: '#0052CC', isDisabled: false },
+    { value: 'jesus-3', label: 'When will Jesus live inside us?', color: '#5243AA' },
+    { value: 'jesus-4', label: 'Who created us?', color: '#FF5630', isFixed: true },
+    { value: 'jesus-5', label: 'How powerful Jesus is?', color: '#FF8B00' },
+    { value: 'jesus-6', label: 'Who is the first born of all creation?', color: '#FFC400' },
+    { value: 'jesus-7', label: 'Who created the earth?', color: '#36B37E' },
+    { value: 'jesus-8', label: 'Who created the angels and beings on heaven?', color: '#00875A' },
+    { value: 'jesus-9', label: 'From whom are we created?', color: '#253858' },
+    { value: 'jesus-10', label: 'Who is the first born from the dead?', color: '#666666' },
+    { value: 'jesus-11', label: "What is Jesus's expection on us?", color: '#666666' },
   ];
   
   export const flavourOptions = [

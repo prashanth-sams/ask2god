@@ -34,40 +34,59 @@ const groupBadgeStyles = {
 export default class Knowit extends Component {
     constructor(props){
         super(props);
+        this.handleSelectChange = this.handleSelectChange.bind(this);
         this.onClick= this.onClick.bind(this);
         this.state = {
             manager : [],
-            tag: 'peace',
-            tag_label: null
+            knowitvalue: 'jesus-1',
+            default_question: 'Who is Jesus?',
+            question: null
         };
 
-        axios.defaults.baseURL = 'http://localhost:4000/knowit';
+        axios.defaults.baseURL = 'http://localhost:4000';
     }
 
     componentDidMount(){
-		axios.get(`/knowit/${this.state.tag}`)
-			.then(response =>{
-				this.setState({manager : response.data});
-			})
-			.catch(function(error){
-				console.log(error);
-            })
+		axios.get(`/knowit/search/${this.state.knowitvalue}`)
+        .then(response =>{
+            this.setState({manager : response.data});
+        })
+        .catch(function(error){
+            console.log(error);
+        })
 	}
 
     onClick(e){
 		// e.preventDefault();
-        const tags=this.state.searchtags || ["peace"];
-		axios.get(`/knowit/${tags}`).then(response => {           
-            console.log(response.data)
-            this.setState({manager : response.data, tag_label: this.state.knowittags});
-		}).catch(function(error){
-			console.log(error);
-		})
+        // const value=this.state.knowitvalue || ["jesus-2"];
+		// axios.get(`/knowit/search/${value}`).then(response => {           
+        //     console.log(response.data)
+        //     this.setState({manager : response.data, value: this.state.knowitvalue});
+		// }).catch(function(error){
+		// 	console.log(error);
+		// })
+    }
+
+    handleSelectChange(event) {
+        if (event !== undefined) {
+
+            axios.get(`/knowit/search/${event.value}`)
+            .then(response =>{
+                this.setState({manager : response.data, question: response.data[0].question});
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        } else {
+
+        }
     }
 
     tabRow(){
         return this.state.manager.map((object, i) => {
-            return <SearchRow obj={object} key={i}/>;
+            return object.bible.map((innerObject, j) => {
+                return <SearchRow obj={innerObject} key={j}/>;
+            })
         });
     }
 
@@ -88,15 +107,8 @@ export default class Knowit extends Component {
                                     formatGroupLabel={formatGroupLabel}
                                     autoFocus
                                     required
-                                    // onChange={this.handleSelectChange}
+                                    onChange={this.handleSelectChange}
                                 />
-
-                                {/* <Select
-                                    defaultValue={[{ label: "Peace", value: "peace" }]}
-                                    autoFocus
-                                    required
-                                    styles={style}
-                                /> */}
                             </div>
                         </div>
                     </div>
@@ -112,17 +124,17 @@ export default class Knowit extends Component {
                 </div> */}
 
 
-                {/* <div className="content-area">
+                <div className="content-area">
                     <div className="content-container-left">
-                        <h2 style={{color: '#616161'}}>/{this.state.tag_label || this.state.tag}</h2>
+                        <h2 style={{color: '#616161'}}>{this.state.question || this.state.default_question}</h2>
                         <div>
                             { this.tabRow() }
                         </div>
                     </div>
                     <div className="content-container-right" id="image-area">
-                        <div>
+                        {/* <div>
                             <img className="" src="https://i.imgur.com/FaFaaIX.jpg" alt="peace" width="367" height="250"/>
-                        </div>
+                        </div> */}
                         <div className="details-area">
                             <div className="infobox-left">
                                 <b>Mentioned in Bible</b>
@@ -132,7 +144,7 @@ export default class Knowit extends Component {
                             </div>
                         </div>
                     </div>                           
-                </div> */}
+                </div>
 			</div>
 		)
 	}

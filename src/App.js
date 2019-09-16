@@ -4,9 +4,6 @@ import "./css/common_styles.css";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 import Home from './components/home/home.component';
-import Create from './components/create/create.component';
-import Edit from './components/edit/edit.component';
-import Index from './components/index/index.component';
 import Search from './components/search/search.component';
 import Knowit from './components/knowit/knowit.component';
 import Timeline from './components/timeline/timeline.component';
@@ -39,10 +36,6 @@ class App extends Component {
   componentDidMount() {
     if (window.location.pathname.includes('/') && window.location.pathname.length <= 1) {
       document.getElementById("home").className += " active";
-    } else if (window.location.pathname.includes('/create') && window.location.pathname.length > 2) {
-      document.getElementById("create").className += " active";
-    } else if (window.location.pathname.includes('/index') && window.location.pathname.length > 2) {
-      document.getElementById("index").className += " active";
     } else if (window.location.pathname.includes('/search') && window.location.pathname.length > 2) {
       document.getElementById("search").className += " active";
     } else if (window.location.pathname.includes('/knowit') && window.location.pathname.length > 2) {
@@ -63,14 +56,6 @@ class App extends Component {
               <i className="fa fa-home"></i>
               <span> Home</span>
             </a>
-            <a id="resp-create" className="menu-item" href="/create">
-              <i className="fa fa-plus"></i>
-              <span> Add verse</span>
-            </a>
-            <a id="resp-index" className="menu-item" href="/index">
-              <i className="fa fa-list"></i>
-              <span> List verse</span>
-            </a>
             <a id="resp-search" className="menu-item" href="/search">
               <i className="fa fa-search"></i>
               <span> Search Bible</span>
@@ -90,18 +75,6 @@ class App extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/create'} className="nav-link" id="create" onClick={handleClick}>
-                    <i className="fa fa-plus"></i>
-                    <span> Add</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={'/index'} className="nav-link" id="index" onClick={handleClick}>
-                    <i className="fa fa-list"></i>
-                    <span> List</span>
-                  </Link>
-                </li>
-                <li className="nav-item">
                   <Link to={'/search'} className="nav-link" id="search" onClick={handleClick}>
                     <i className="fa fa-search"></i>
                     <span> Search</span>
@@ -109,7 +82,7 @@ class App extends Component {
                 </li>
                 <li className="nav-item">
                   <Link to={'/knowit'} className="nav-link" id="knowit" onClick={handleClick}>
-                    <span> Know It</span>
+                    <span> Q & A?</span>
                   </Link>
                 </li>
               </ul>
@@ -118,9 +91,6 @@ class App extends Component {
           <br/>
           <Switch>
               <Route exact path='/' component={ Home } />
-              <Route path='/create' component={ Create } />
-              <Route path='/edit/:id' component={ Edit } />
-              <Route path='/index' component={ Index } />
               <Route path='/search' component={ Search } />
               <Route path='/knowit' component={ Knowit } />
               <Route path='/timeline' component={ Timeline } />

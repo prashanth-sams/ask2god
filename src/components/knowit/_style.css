@@ -22,3 +22,14 @@ div[class*=-control], div[class*="css-1szy77t-control"]:focus, div[class*="css-1
 div[class*="-singleValue"] {
   color: rgba(74, 74, 74, 0.9);
 }
+
+.content-area {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.search-row {
+  display: flex;
+  flex-direction: column-reverse;
+}

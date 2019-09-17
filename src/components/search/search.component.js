@@ -4,6 +4,7 @@ import { colourOptions } from '../../docs/data';
 import axios from 'axios';
 import './_style.css';
 import SearchRow from './SearchRow';
+import Loading from '../loading/loading.component';
 
 const style = {
     // width: '3px',
@@ -30,23 +31,35 @@ const style = {
 };
 
 export default class Search extends Component {
+
     constructor(props){
         super(props);
         this.handleSelectChange = this.handleSelectChange.bind(this);
         this.onClick= this.onClick.bind(this);
-        this.state = {manager : [], tag: 'peace', tag_label: null};
+        this.state = {
+            manager : [],
+            tag: 'peace',
+            tag_label: null,
+            isLoading: false
+        };
 
         axios.defaults.baseURL = 'http://localhost:4000/keyword';
     }
 
     componentDidMount(){
-		axios.get(`/search/${this.state.tag}`)
-			.then(response =>{
-				this.setState({manager : response.data});
-			})
-			.catch(function(error){
-				console.log(error);
-            })
+        this.setState({
+            isLoading: true
+        })
+        
+        axios.get(`/search/${this.state.tag}`).then(response =>{
+            this.setState({
+                manager : response.data,
+                isLoading: false
+            });
+        })
+        .catch(function(error){
+            console.log(error);
+        })
 	}
 
     onClick(e){
@@ -78,54 +91,59 @@ export default class Search extends Component {
     }
 
 	render(){
+        const { isLoading } = this.state;
+
 		return (
-			<div className="search-top">
-                <div className="searchbox-layer0">
-                    <div className="searchbox-layer2">
-                        <div className="icon-search" id="search-icon">
-                            <i className="fa fa-search"></i>
-                        </div>
-                        <div className="searchbox-layer3">
-                            <div className="searchbox-layer4">
-                                <Select
-                                    isMulti={true}
-                                    onChange={this.handleSelectChange}
-                                    options={colourOptions}
-                                    placeholder="Search keywords [e.g., Jesus]"
-                                    defaultValue={[{ label: "Peace", value: "peace" }]}
-                                    autoFocus
-                                    required
-                                    styles={style}
-                                />
+            <React.Fragment>
+                {isLoading ? <Loading /> : ""}
+                <div className="search-top">
+                    <div className="searchbox-layer0">
+                        <div className="searchbox-layer2">
+                            <div className="icon-search" id="search-icon">
+                                <i className="fa fa-search"></i>
+                            </div>
+                            <div className="searchbox-layer3">
+                                <div className="searchbox-layer4">
+                                    <Select
+                                        isMulti={true}
+                                        onChange={this.handleSelectChange}
+                                        options={colourOptions}
+                                        placeholder="Search keywords [e.g., Jesus]"
+                                        defaultValue={[{ label: "Peace", value: "peace" }]}
+                                        autoFocus
+                                        required
+                                        styles={style}
+                                    />
+                                </div>
                             </div>
                         </div>
+                        <button type="button" className="search-button" onClick={this.onClick.bind(this)}>
+                            <span>Search</span>
+                        </button>
                     </div>
-                    <button type="button" className="search-button" onClick={this.onClick.bind(this)}>
-                        <span>Search</span>
-                    </button>
-                </div>
-                <div className="content-area">
-                    <div className="content-container-left">
-                        <h2 style={{color: '#616161'}}>/{this.state.tag_label || this.state.tag}</h2>
-                        <div>
-                            { this.tabRow() }
+                    <div className="content-area">
+                        <div className="content-container-left">
+                            <h2 style={{color: '#616161'}}>/{this.state.tag_label || this.state.tag}</h2>
+                            <div>
+                                { this.tabRow() }
+                            </div>
                         </div>
+                        <div className="content-container-right" id="image-area">
+                            <div>
+                                <img className="" src="https://i.imgur.com/FaFaaIX.jpg" alt="peace" width="367" height="250"/>
+                            </div>
+                            <div className="details-area">
+                                <div className="infobox-left">
+                                    <b>Mentioned in Bible</b>
+                                </div>
+                                <div className="infobox-right">
+                                    429 times [KJV version]
+                                </div>
+                            </div>
+                        </div>                           
                     </div>
-                    <div className="content-container-right" id="image-area">
-                        <div>
-                            <img className="" src="https://i.imgur.com/FaFaaIX.jpg" alt="peace" width="367" height="250"/>
-                        </div>
-                        <div className="details-area">
-                            <div className="infobox-left">
-                                <b>Mentioned in Bible</b>
-                            </div>
-                            <div className="infobox-right">
-                                429 times [KJV version]
-                            </div>
-                        </div>
-                    </div>                           
                 </div>
-			</div>
+            </React.Fragment>
 		)
 	}
 }

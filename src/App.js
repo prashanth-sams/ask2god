@@ -65,15 +65,9 @@ class App extends Component {
             </a>
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <Link to={'/'} className="navbar-brand" onClick={handleClick}>Ask2God</Link>
+            <Link to={'/'} className="navbar-brand" id="home" onClick={handleClick}>Ask2God</Link>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto" id="header">
-                <li className="nav-item">
-                  <Link to={'/'} className="nav-link" id="home" onClick={handleClick}>
-                    <i className="fa fa-home"></i>
-                    <span> Home</span>
-                  </Link>
-                </li>
                 <li className="nav-item">
                   <Link to={'/search'} className="nav-link" id="search" onClick={handleClick}>
                     <i className="fa fa-search"></i>

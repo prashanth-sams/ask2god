@@ -50,8 +50,8 @@ export default class Search extends Component {
         this.setState({
             isLoading: true
         })
-
-		axios.get(`/search/${this.state.tag}`).then(response =>{
+        
+        axios.get(`/search/${this.state.tag}`).then(response =>{
             this.setState({
                 manager : response.data,
                 isLoading: false

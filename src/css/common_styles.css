@@ -110,6 +110,10 @@ input[type=submit]:hover, .btn-primary:hover {
   color: rgba(74, 74, 74, 0.9);
 }
 
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: #5243AA;
+}
+
 @media screen and (max-width: 768px) {
   .navbar {
     position: relative;

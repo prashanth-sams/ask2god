@@ -6,7 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./DB');
 
-const managerRoute = require('./routes/manager.route');
+const keywordRoute = require('./routes/keywords.route');
 const questionRoute = require('./routes/question.route');
 
 mongoose.Promise = global.Promise;
@@ -20,7 +20,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use('/', managerRoute, questionRoute);
+app.use('/', keywordRoute, questionRoute);
 
 app.listen(PORT, function(){
   console.log('Server is running on Port:',PORT);

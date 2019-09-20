@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for Manager
-let Manager = new Schema({
+let Keywords = new Schema({
   tag_name: [{
     type: String
   }],
@@ -23,4 +23,4 @@ let Manager = new Schema({
     collection: 'manager'
 });
 
-module.exports = mongoose.model('Manager', Manager);
+module.exports = mongoose.model('Keywords', Keywords);

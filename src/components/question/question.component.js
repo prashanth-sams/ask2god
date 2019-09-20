@@ -37,7 +37,7 @@ export default class Question extends Component {
         this.handleSelectChange = this.handleSelectChange.bind(this);
         this.onClick= this.onClick.bind(this);
         this.state = {
-            manager : [],
+            results : [],
             questionvalue: 'jesus-1',
             default_question: 'Who is Jesus?',
             question: null
@@ -49,7 +49,7 @@ export default class Question extends Component {
     componentDidMount(){
 		axios.get(`/question/search/${this.state.questionvalue}`)
         .then(response =>{
-            this.setState({manager : response.data});
+            this.setState({results : response.data});
         })
         .catch(function(error){
             console.log(error);
@@ -61,7 +61,7 @@ export default class Question extends Component {
         // const value=this.state.questionvalue || ["jesus-2"];
 		// axios.get(`/question/search/${value}`).then(response => {           
         //     console.log(response.data)
-        //     this.setState({manager : response.data, value: this.state.questionvalue});
+        //     this.setState({results : response.data, value: this.state.questionvalue});
 		// }).catch(function(error){
 		// 	console.log(error);
 		// })
@@ -72,7 +72,7 @@ export default class Question extends Component {
 
             axios.get(`/question/search/${event.value}`)
             .then(response =>{
-                this.setState({manager : response.data, question: response.data[0].question});
+                this.setState({results : response.data, question: response.data[0].question});
             })
             .catch(function(error){
                 console.log(error);
@@ -83,7 +83,7 @@ export default class Question extends Component {
     }
 
     tabRow(){
-        return this.state.manager.map((object, i) => {
+        return this.state.results.map((object, i) => {
             return object.bible.map((innerObject, j) => {
                 return <SearchRow obj={innerObject} key={j}/>;
             })

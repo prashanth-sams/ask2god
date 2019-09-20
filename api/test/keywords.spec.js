@@ -1,11 +1,11 @@
 const request = require('supertest');
-const manager = 'http://localhost:4000';
+const keywords = 'http://localhost:4000';
 
 // Main Page
 describe('GET /', () => {
     
     it('should return 200 OK', (done) => {
-      request(manager)
+      request(keywords)
         .get('/')
         .expect(200, done);
     });

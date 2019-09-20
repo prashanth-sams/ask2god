@@ -1,10 +1,10 @@
 import React from 'react';
-import Knowit from './knowit.component.js';
+import Question from './question.component.js.js';
 import { mount, shallow } from 'enzyme';
 
-describe ('<Knowit />', () => {
+describe ('<Question />', () => {
     it (`should display the list of questions results`, () => {
-        const component = shallow(<Knowit />);
+        const component = shallow(<Question />);
         expect((component).exists()).toBe(true);
     });
 });

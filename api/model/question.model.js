@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for Question
-var Knowit = new Schema({
+var Question = new Schema({
   question: {
     type: String
   },
@@ -28,7 +28,7 @@ var Knowit = new Schema({
     }
   }]
 },{
-    collection: 'manager'
-});
+  collection: 'manager'
+}); 
 
-module.exports = mongoose.model('Knowit', Knowit);
+module.exports = mongoose.model('Question', Question);

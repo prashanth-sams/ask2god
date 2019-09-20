@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 import Home from './components/home/home.component';
 import Search from './components/search/search.component';
-import Knowit from './components/knowit/knowit.component';
+import Question from './components/question/question.component';
 import Timeline from './components/timeline/timeline.component';
 import './css/tabs.css';
 import './css/mobile.css';
@@ -38,8 +38,8 @@ class App extends Component {
       document.getElementById("home").className += " active";
     } else if (window.location.pathname.includes('/search') && window.location.pathname.length > 2) {
       document.getElementById("search").className += " active";
-    } else if (window.location.pathname.includes('/knowit') && window.location.pathname.length > 2) {
-      document.getElementById("knowit").className += " active";
+    } else if (window.location.pathname.includes('/question') && window.location.pathname.length > 2) {
+      document.getElementById("question").className += " active";
     } else if (window.location.pathname.includes('/timeline') && window.location.pathname.length > 2) {
       console.log('timeline page')
     } else {
@@ -60,7 +60,7 @@ class App extends Component {
               <i className="fa fa-search"></i>
               <span> Search Bible</span>
             </a>
-            <a id="resp-knowit" className="menu-item" href="/knowit">
+            <a id="resp-question" className="menu-item" href="/question">
               <span> Know it</span>
             </a>
           </Menu>
@@ -75,7 +75,7 @@ class App extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/knowit'} className="nav-link" id="knowit" onClick={handleClick}>
+                  <Link to={'/question'} className="nav-link" id="question" onClick={handleClick}>
                     <span> Q & A?</span>
                   </Link>
                 </li>
@@ -86,7 +86,7 @@ class App extends Component {
           <Switch>
               <Route exact path='/' component={ Home } />
               <Route path='/search' component={ Search } />
-              <Route path='/knowit' component={ Knowit } />
+              <Route path='/question' component={ Question } />
               <Route path='/timeline' component={ Timeline } />
               {/* <ReactLoading type={'bars'} color={'#5243AA'} height={'20%'} width={'20%'} /> */}
           </Switch>

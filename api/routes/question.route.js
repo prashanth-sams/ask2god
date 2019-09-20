@@ -11,7 +11,7 @@ questionRoute.route('/question/add').post(function (req, res) {
   let question = new Question(req.body);
   question.save()
     .then(question => {
-      res.status(200).json({'question': 'question is added successfully'});
+      res.status(200).json({'question': 'question added successfully'});
     })
     .catch(err => {
       res.status(400).send("unable to save to database");

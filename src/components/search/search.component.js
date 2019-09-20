@@ -37,13 +37,13 @@ export default class Search extends Component {
         this.handleSelectChange = this.handleSelectChange.bind(this);
         this.onClick= this.onClick.bind(this);
         this.state = {
-            manager : [],
+            results : [],
             tag: 'peace',
             tag_label: null,
             isLoading: false
         };
 
-        axios.defaults.baseURL = 'http://localhost:4000/keyword';
+        axios.defaults.baseURL = 'http://localhost:4000/keywords';
     }
 
     componentDidMount(){
@@ -53,7 +53,7 @@ export default class Search extends Component {
         
         axios.get(`/search/${this.state.tag}`).then(response =>{
             this.setState({
-                manager : response.data,
+                results : response.data,
                 isLoading: false
             });
         })
@@ -67,7 +67,7 @@ export default class Search extends Component {
         const tags=this.state.searchtags || ["peace"];
 		axios.get(`/search/${tags}`).then(response => {           
             console.log(response.data)
-            this.setState({manager : response.data, tag_label: this.state.searchtags});
+            this.setState({results : response.data, tag_label: this.state.searchtags});
 		}).catch(function(error){
 			console.log(error);
 		})
@@ -85,7 +85,7 @@ export default class Search extends Component {
     }
 
     tabRow(){
-        return this.state.manager.map((object, i) => {
+        return this.state.results.map((object, i) => {
             return <SearchRow obj={object} key={i}/>;
         });
     }

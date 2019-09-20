@@ -38,7 +38,7 @@ export default class Home extends Component {
         this.state = {
             show: false,
         }
-        axios.defaults.baseURL = 'http://localhost:4000/keyword';
+        axios.defaults.baseURL = 'http://localhost:4000/keywords';
     }
 
     onClick(e){
@@ -46,7 +46,7 @@ export default class Home extends Component {
         const tags=this.state.searchtags;
 		axios.get(`/search/${tags}`).then(res => {           
             console.log(res.data)
-            this.setState({manager : res.data});
+            this.setState({results : res.data});
 		}).catch(function(error){
 			console.log(error);
 		})

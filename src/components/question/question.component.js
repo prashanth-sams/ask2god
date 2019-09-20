@@ -31,14 +31,14 @@ const groupBadgeStyles = {
     textAlign: 'center',
 };
 
-export default class Knowit extends Component {
+export default class Question extends Component {
     constructor(props){
         super(props);
         this.handleSelectChange = this.handleSelectChange.bind(this);
         this.onClick= this.onClick.bind(this);
         this.state = {
             manager : [],
-            knowitvalue: 'jesus-1',
+            questionvalue: 'jesus-1',
             default_question: 'Who is Jesus?',
             question: null
         };
@@ -47,7 +47,7 @@ export default class Knowit extends Component {
     }
 
     componentDidMount(){
-		axios.get(`/knowit/search/${this.state.knowitvalue}`)
+		axios.get(`/question/search/${this.state.questionvalue}`)
         .then(response =>{
             this.setState({manager : response.data});
         })
@@ -58,10 +58,10 @@ export default class Knowit extends Component {
 
     onClick(e){
 		// e.preventDefault();
-        // const value=this.state.knowitvalue || ["jesus-2"];
-		// axios.get(`/knowit/search/${value}`).then(response => {           
+        // const value=this.state.questionvalue || ["jesus-2"];
+		// axios.get(`/question/search/${value}`).then(response => {           
         //     console.log(response.data)
-        //     this.setState({manager : response.data, value: this.state.knowitvalue});
+        //     this.setState({manager : response.data, value: this.state.questionvalue});
 		// }).catch(function(error){
 		// 	console.log(error);
 		// })
@@ -70,7 +70,7 @@ export default class Knowit extends Component {
     handleSelectChange(event) {
         if (event !== undefined) {
 
-            axios.get(`/knowit/search/${event.value}`)
+            axios.get(`/question/search/${event.value}`)
             .then(response =>{
                 this.setState({manager : response.data, question: response.data[0].question});
             })

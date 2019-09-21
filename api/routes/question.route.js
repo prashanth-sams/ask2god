@@ -28,7 +28,7 @@ questionRoute.route('/question/search/:value').get(function (req, res) {
 
 // Defined get data(index or listing) route
 questionRoute.route('/question/').get(function (req, res) {
-  Question.find({ question: {$exists: true} }, function(err, data){
+  Question.find({ title: {$exists: true} }, function(err, data){
     if(err){
       console.log(err);
     }

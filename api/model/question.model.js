@@ -4,13 +4,13 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Question
 var Question = new Schema({
-  question: {
+  title: {
     type: String
   },
   tag_name: [{
     type: String
   }],
-  value: {
+  reference: {
     type: String
   },
   bible: [{

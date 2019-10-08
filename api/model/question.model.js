@@ -1,5 +1,6 @@
 "use strict";
 const mongoose = require('mongoose');
+const timestamps = require('mongoose-timestamp');
 const Schema = mongoose.Schema;
 
 // Define collection and schema for Question
@@ -29,6 +30,11 @@ var Question = new Schema({
   }]
 },{
   collection: 'manager'
-}); 
+});
+
+Question.plugin(timestamps, {
+  createdAt: 'created_at', 
+  updatedAt: 'updated_at'
+})
 
 module.exports = mongoose.model('Question', Question);

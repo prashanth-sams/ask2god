@@ -8,6 +8,7 @@ const config = require('./DB');
 
 const keywordRoute = require('./routes/keywords.route');
 const questionRoute = require('./routes/question.route');
+// const revelationRoute = require('./routes/revelation.route');
 
 mongoose.Promise = global.Promise;
 console.log(config);
@@ -20,6 +21,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+// app.use('/', keywordRoute, questionRoute, revelationRoute);
 app.use('/', keywordRoute, questionRoute);
 
 app.listen(PORT, function(){

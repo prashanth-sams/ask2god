@@ -8,7 +8,7 @@ const keywordRoutes = express.Router();
 var Keywords = require('../model/keywords.model');
 
 // Defined store route
-keywordRoutes.route('/keywords/add').post(function (req, res) {
+keywordRoutes.route('/:language(en|ta)/keywords/add').post(function (req, res) {
   let keywords = new Keywords(req.body);
   keywords.save()
     .then(keywords => {
@@ -20,7 +20,7 @@ keywordRoutes.route('/keywords/add').post(function (req, res) {
 });
 
 // Defined get data(index or listing) route
-keywordRoutes.route('/keywords/').get(function (req, res) {
+keywordRoutes.route('/:language(en|ta)/keywords/').get(function (req, res) {
   Keywords.find({ book_name: {$exists: true} }, function(err, keywords){
     if(err){
       console.log(err);
@@ -32,7 +32,7 @@ keywordRoutes.route('/keywords/').get(function (req, res) {
 });
 
 // Filter with tag_name
-keywordRoutes.route('/keywords/search/:tag_name').get(function (req, res) {
+keywordRoutes.route('/:language(en|ta)/keywords/search/:tag_name').get(function (req, res) {
   let tag_name = req.params.tag_name;
   Keywords.find({ tag_name: tag_name }, function(err, data){
     res.json(data);
@@ -40,7 +40,7 @@ keywordRoutes.route('/keywords/search/:tag_name').get(function (req, res) {
 });
 
 // Defined edit route
-keywordRoutes.route('/keywords/edit/:id').get(function (req, res) {
+keywordRoutes.route('/:language(en|ta)/keywords/edit/:id').get(function (req, res) {
   let id = req.params.id;
   Keywords.findById(id, function (err, keywords){
       res.json(keywords);
@@ -48,7 +48,7 @@ keywordRoutes.route('/keywords/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-keywordRoutes.route('/keywords/update/:id').post(function (req, res) {
+keywordRoutes.route('/:language(en|ta)/keywords/update/:id').post(function (req, res) {
   Keywords.findById(req.params.id, function(err, keywords) {
     if (!keywords)
       res.status(404).send("data is not found");
@@ -70,7 +70,7 @@ keywordRoutes.route('/keywords/update/:id').post(function (req, res) {
 });
 
 // Defined delete | remove | destroy route
-keywordRoutes.route('/keywords/delete/:id').get(function (req, res) {
+keywordRoutes.route('/:language(en|ta)/keywords/delete/:id').get(function (req, res) {
   Keywords.findByIdAndRemove({_id: req.params.id}, function(err, keywords){
         if(err) res.json(err);
         else res.json('Successfully removed');

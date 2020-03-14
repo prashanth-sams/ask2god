@@ -7,6 +7,7 @@ import Home from './components/home/home.component';
 import Search from './components/search/search.component';
 import Question from './components/question/question.component';
 import Timeline from './components/timeline/timeline.component';
+// import Revelation from './components/revelation/revelation.component';
 import './css/tabs.css';
 import './css/mobile.css';
 // import ReactLoading from 'react-loading';
@@ -42,6 +43,8 @@ class App extends Component {
       document.getElementById("question").className += " active";
     } else if (window.location.pathname.includes('/timeline') && window.location.pathname.length > 2) {
       console.log('timeline page')
+    // } else if (window.location.pathname.includes('/revelation') && window.location.pathname.length > 2) {
+    //   console.log('revelation page')
     } else {
       console.log('unknown page')
     }
@@ -88,6 +91,7 @@ class App extends Component {
               <Route path='/search' component={ Search } />
               <Route path='/question' component={ Question } />
               <Route path='/timeline' component={ Timeline } />
+              {/* <Route path='/revelation' component={ Revelation } /> */}
               {/* <ReactLoading type={'bars'} color={'#5243AA'} height={'20%'} width={'20%'} /> */}
           </Switch>
         </div>

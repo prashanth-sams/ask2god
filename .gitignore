@@ -25,3 +25,7 @@ yarn-error.log*
 #dependencias-api
 /api/node_modules
 /data
+src/css/revelation.scss
+src/components/revelation/
+api/model/revelation.model.js
+api/routes/revelation.route.js

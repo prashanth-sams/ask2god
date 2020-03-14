@@ -8,10 +8,16 @@ var Question = new Schema({
   title: {
     type: String
   },
+  answer: {
+    type: String
+  },
   tag_name: [{
     type: String
   }],
   reference: {
+    type: String
+  },
+  lang: {
     type: String
   },
   bible: [{

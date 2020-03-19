@@ -13,6 +13,6 @@ jobs:
     - name: Build the Docker image and publish to github packages
       run: |
         VERSION=$(date +%s)
-        docker build . --file Dockerfile --tag docker.pkg.github.com/prashanth-sams/ask2god/app:${VERSION}
+        docker build . --file Dockerfile --tag docker.pkg.github.com/prashanth-sams/ask2god/build:${VERSION}
         docker login docker.pkg.github.com --username prashanth-sams --password ${{ secrets.GITHUB_TOKEN }}
-        docker push docker.pkg.github.com/prashanth-sams/ask2god/app:${VERSION}
+        docker push docker.pkg.github.com/prashanth-sams/ask2god/build:${VERSION}

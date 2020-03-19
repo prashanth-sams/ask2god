@@ -43,7 +43,6 @@ questionRoute.route('/:language(en|ta)/question/').get(function (req, res) {
 // Defined edit route
 questionRoute.route('/:language(en|ta)/question/edit/:id').get(function (req, res) {
   let id = req.params.id;
-  // let language = req.params.language;
   Question.findById(id, function (err, data){
       res.json(data);
   });

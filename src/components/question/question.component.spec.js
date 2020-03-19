@@ -1,5 +1,5 @@
 import React from 'react';
-import Question from './question.component.js.js';
+import Question from './question.component.js';
 import { mount, shallow } from 'enzyme';
 
 describe ('<Question />', () => {

@@ -13,12 +13,12 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "lodash": ">=4.17.15",
-    "mongoose": "^5.4.4",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.5",
     "mongoose-timestamp": "^0.6.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "supertest": "^4.0.2"
   }
 }

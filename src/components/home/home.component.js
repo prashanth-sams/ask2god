@@ -32,17 +32,18 @@ const style = {
 export default class Home extends Component {
     constructor(props){
         super(props);
-        this.handleSelectChange = this.handleSelectChange.bind(this);
+        this.onChangeTagName = this.onChangeTagName.bind(this);
         this.onClick= this.onClick.bind(this);
 
         this.state = {
-            show: false,
+            searchtags: []
         }
         axios.defaults.baseURL = 'http://localhost:4000/keywords';
     }
 
     onClick(e){
-		// e.preventDefault();
+        // console.log(`The keywords are ${this.state.searchtags}`)
+        // e.preventDefault();
         const tags=this.state.searchtags;
 		axios.get(`/search/${tags}`).then(res => {           
             console.log(res.data)
@@ -52,28 +53,24 @@ export default class Home extends Component {
 		})
     }
 
-    // this section needs update
-    handleSelectChange( value ) {
-        if (value[0] !== undefined) {
-            this.setState({
-                searchtags : value[0].value
-            })
-        } else {
-
-        }
+    onChangeTagName(newValue, actionMeta) {
+        /**
+         * console.group('Value Changed');
+         * console.log(newValue);
+         * console.log(`action: ${actionMeta.action}`);
+         * console.groupEnd();
+         */
+        const values = [];
         
-        if ( value.length >= 2 ) {
-            this.setState( {
-                show: true
-            });
-
-            if(this.state.show) { 
-                // return (div[class$=-control]{background-color: white; });
-            } else { 
-                // return (<a onClick={this.onClick}> press me </a>);
-            }
+        if (newValue !== null) {
+          for (let i = 0, l = newValue.length; i < l; i++) {
+            values.push(newValue[parseInt(i)].value);
+          }
+          this.setState({
+            searchtags: values
+          })
         }
-    }
+      }
 
 	render(){
 		return (
@@ -89,8 +86,11 @@ export default class Home extends Component {
                                 <div className="searchbox-layer4">
                                     <Select
                                         isMulti={true}
-                                        onChange={this.handleSelectChange}
-                                        options={colourOptions}
+                                        onChange={this.onChangeTagName}
+                                        options={this.state.searchtags.length >= 5 ? [] : colourOptions}
+                                        noOptionsMessage={() => {
+                                            return this.state.searchtags.length >= 5 ? "You have reached the max keywords search" : "No options available" ;
+                                          }}
                                         placeholder="Search keywords [e.g., Jesus]"
                                         autoFocus
                                         required

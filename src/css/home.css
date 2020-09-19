@@ -187,5 +187,5 @@ div[class$=-option], div[class$=-option]:hover {
 }
 
 #react-select-2-input {
-    transition-duration: 0s !important;
+    transition-duration: 0s;
 }

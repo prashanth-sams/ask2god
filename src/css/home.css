@@ -185,3 +185,7 @@ div[class$=-option], div[class$=-option]:hover {
     background-color: #28a745;
     border-radius: 0%;
 }
+
+#react-select-2-input {
+    transition-duration: 0s !important;
+}

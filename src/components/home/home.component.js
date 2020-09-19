@@ -110,18 +110,17 @@ export default class Home extends Component {
                     <div className="col-lg-4">
                         <a href="/timeline"><img className="rounded-circle" src="https://i.imgur.com/jBMeyiY.png" alt="bible timeline" width="140" height="140" /></a>
                         <h2>Bible History</h2>
-                        <p>Timeline of Bible from the start till now; Timeline of Bible from the start till now; Timeline of Bible from the start till now; Timeline of Bible from the start till now</p>
+                        <p>Timeline of the Holy Bible from Genesis to Revelation</p>
                     </div>
                     <div className="col-lg-4">
-                        {/* <a href="/revelation"><img className="rounded-circle" src="https://i.imgur.com/Fhc7ADO.png" alt="revelation timeline" width="140" height="140" /></a> */}
-                        <img className="rounded-circle" src="https://i.imgur.com/Fhc7ADO.png" alt="revelation timeline" width="140" height="140" />
-                        <h2>Revelation Timeline</h2>
-                        <p>Timeline of Bible from the start till now; Timeline of Bible from the start till now; Timeline of Bible from the start till now; Timeline of Bible from the start till now</p>
+                    <a href="/question"><img className="rounded-circle" src="https://i.imgur.com/ls1f4NZ.png" alt="questions" width="140" height="140" /></a>
+                        <h2>Ask Me</h2>
+                        <p>Whoever drinks the water I give him will never thirst</p>
                     </div>
                     <div className="col-lg-4">
-                        <img className="rounded-circle" src="https://i.imgur.com/XSdRfRQ.jpg" alt="TBD" width="140" height="140" />
-                        <h2>TBD</h2>
-                        <p>Timeline of Bible from the start till now; Timeline of Bible from the start till now; Timeline of Bible from the start till now; Timeline of Bible from the start till now</p>
+                        <img className="rounded-circle" src="https://i.imgur.com/Fhc7ADO.png" alt="from NewTestament" width="140" height="140" />
+                        <h2>New Testament</h2>
+                        <p>Timeline after Jesus Christ's birth</p>
                     </div>
                 </div>
             </div>

@@ -64,7 +64,8 @@ class App extends Component {
               <span> Search Bible</span>
             </a>
             <a id="resp-question" className="menu-item" href="/question">
-              <span> Know it</span>
+              <i className="fa fa-question-circle"></i>
+              <span> Q & A</span>
             </a>
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">

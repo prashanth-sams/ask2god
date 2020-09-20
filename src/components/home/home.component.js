@@ -105,21 +105,26 @@ export default class Home extends Component {
                             </button>
                         </a>
                     </div>
+                    <a onClick={this.onClick.bind(this)} href='/search'>
+                        <button type="button" className="mobile-search-button">
+                            <span>Search</span>
+                        </button>
+                    </a>
 			    </div>
                 <div className="row">
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 thumbnail">
                         <a href="/timeline"><img className="rounded-circle" src="https://i.imgur.com/jBMeyiY.png" alt="bible timeline" width="140" height="140" /></a>
-                        <h2>Bible History</h2>
-                        <p>Timeline of the Holy Bible from Genesis to Revelation</p>
+                        <h3>Bible History</h3>
+                        <p>Chronology of the Old Testament</p>
                     </div>
-                    <div className="col-lg-4">
-                    <a href="/question"><img className="rounded-circle" src="https://i.imgur.com/ls1f4NZ.png" alt="questions" width="140" height="140" /></a>
-                        <h2>Ask Me</h2>
+                    <div className="col-lg-4 thumbnail">
+                        <a href="/question"><img className="rounded-circle" src="https://i.imgur.com/ls1f4NZ.png" alt="questions" width="140" height="140" /></a>
+                        <h3>Ask Me</h3>
                         <p>Whoever drinks the water I give him will never thirst</p>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-lg-4 thumbnail">
                         <img className="rounded-circle" src="https://i.imgur.com/Fhc7ADO.png" alt="from NewTestament" width="140" height="140" />
-                        <h2>New Testament</h2>
+                        <h3>After Christ</h3>
                         <p>Timeline after Jesus Christ's birth</p>
                     </div>
                 </div>

@@ -59,6 +59,8 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
+  margin-left: 10%;
+  font-size: 1.10em;
 }
 
 /* Styling of overlay */
@@ -74,4 +76,12 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu a:hover {
   color: #ffffff;
   text-decoration: none;
+}
+
+a:-webkit-any-link:focus {
+  outline-offset: 0px;
+}
+
+:focus {
+  outline: -webkit-focus-ring-color auto 0px;
 }

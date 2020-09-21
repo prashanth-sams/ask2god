@@ -5,6 +5,7 @@ import axios from 'axios';
 import './_style.css';
 import SearchRow from './SearchRow';
 import Loading from '../loading/loading.component';
+import Searchnotes from '../searchnotes/searchnotes.component';
 
 const style = {
     // width: '3px',
@@ -40,10 +41,11 @@ export default class Search extends Component {
             results : [],
             tag: 'peace',
             tag_label: null,
-            isLoading: false
+            isLoading: false,
+            isDesktop: false
         };
 
-        axios.defaults.baseURL = 'http://localhost:4000/keywords';
+        axios.defaults.baseURL = 'http://localhost:4000/en/keywords';
     }
 
     componentDidMount(){
@@ -51,6 +53,12 @@ export default class Search extends Component {
             isLoading: true
         })
         
+        if (window.innerWidth > 768) {
+            this.setState({ isDesktop: true });
+        } else {
+            this.setState({ isDesktop: false });
+        }
+
         axios.get(`/search/${this.state.tag}`).then(response =>{
             this.setState({
                 results : response.data,
@@ -91,7 +99,7 @@ export default class Search extends Component {
     }
 
 	render(){
-        const { isLoading } = this.state;
+        const { isLoading, isDesktop } = this.state;
 
 		return (
             <React.Fragment>
@@ -128,19 +136,7 @@ export default class Search extends Component {
                                 { this.tabRow() }
                             </div>
                         </div>
-                        <div className="content-container-right" id="image-area">
-                            <div>
-                                <img className="" src="https://i.imgur.com/FaFaaIX.jpg" alt="peace" width="367" height="250"/>
-                            </div>
-                            <div className="details-area">
-                                <div className="infobox-left">
-                                    <b>Mentioned in Bible</b>
-                                </div>
-                                <div className="infobox-right">
-                                    429 times [KJV version]
-                                </div>
-                            </div>
-                        </div>                           
+                        {isDesktop ? <Searchnotes /> : null}
                     </div>
                 </div>
             </React.Fragment>

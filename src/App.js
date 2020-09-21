@@ -57,15 +57,15 @@ class App extends Component {
           <Menu width={ '60%' }>
             <a id="resp-home" className="menu-item" href="/">
               <i className="fa fa-home"></i>
-              <span> Home</span>
+              <span className="bm-menu-header"> Home</span>
             </a>
             <a id="resp-search" className="menu-item" href="/search">
               <i className="fa fa-search"></i>
-              <span> Search Bible</span>
+              <span className="bm-menu-header"> Bible Search</span>
             </a>
             <a id="resp-question" className="menu-item" href="/question">
               <i className="fa fa-question-circle"></i>
-              <span> Q & A</span>
+              <span className="bm-menu-header"> Q & A</span>
             </a>
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">

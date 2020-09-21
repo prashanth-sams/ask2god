@@ -61,6 +61,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   display: inline-block;
   margin-left: 10%;
   font-size: 1.10em;
+  padding-top: 10%;
 }
 
 /* Styling of overlay */
@@ -84,4 +85,8 @@ a:-webkit-any-link:focus {
 
 :focus {
   outline: -webkit-focus-ring-color auto 0px;
+}
+
+.bm-menu-header {
+  padding-left: 3%;
 }

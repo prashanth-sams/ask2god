@@ -44,9 +44,9 @@ export default class Home extends Component {
 
     componentDidMount() {
         if (window.innerWidth > 768) {
-            this.setState({ width: 5 })
+            this.setState({ width: 5 });
         } else {
-            this.setState({ width: 2 })
+            this.setState({ width: 2 });
         }
     }
 

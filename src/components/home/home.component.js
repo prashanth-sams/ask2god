@@ -36,9 +36,18 @@ export default class Home extends Component {
         this.onClick= this.onClick.bind(this);
 
         this.state = {
-            searchtags: []
+            searchtags: [],
+            width: 0
         }
         axios.defaults.baseURL = 'http://localhost:4000/keywords';
+    }
+
+    componentDidMount() {
+        if (window.innerWidth > 768) {
+            this.setState({ width: 5 })
+        } else {
+            this.setState({ width: 2 })
+        }
     }
 
     onClick(e){
@@ -87,9 +96,9 @@ export default class Home extends Component {
                                     <Select
                                         isMulti={true}
                                         onChange={this.onChangeTagName}
-                                        options={this.state.searchtags.length >= 5 ? [] : colourOptions}
+                                        options={this.state.searchtags.length >= parseInt(this.state.width) ? [] : colourOptions}
                                         noOptionsMessage={() => {
-                                            return this.state.searchtags.length >= 5 ? "You have reached the max keywords search" : "No options available" ;
+                                            return this.state.searchtags.length >= parseInt(this.state.width) ? "You have reached the max keywords search" : "No options available" ;
                                           }}
                                         placeholder="Search keywords [e.g., Jesus]"
                                         autoFocus
@@ -115,7 +124,7 @@ export default class Home extends Component {
                     <div className="col-lg-4 thumbnail">
                         <a href="/timeline"><img className="rounded-circle" src="https://i.imgur.com/jBMeyiY.png" alt="bible timeline" width="140" height="140" /></a>
                         <h3>Bible History</h3>
-                        <p>Chronology of the Old Testament</p>
+                        <p>Chronology of the Old Testament <br/> Adam to Jesus Christ's Birth</p>
                     </div>
                     <div className="col-lg-4 thumbnail">
                         <a href="/question"><img className="rounded-circle" src="https://i.imgur.com/ls1f4NZ.png" alt="questions" width="140" height="140" /></a>
@@ -124,8 +133,8 @@ export default class Home extends Component {
                     </div>
                     <div className="col-lg-4 thumbnail">
                         <img className="rounded-circle" src="https://i.imgur.com/Fhc7ADO.png" alt="from NewTestament" width="140" height="140" />
-                        <h3>After Christ</h3>
-                        <p>Timeline after Jesus Christ's birth</p>
+                        <h3>Jesus Christ</h3>
+                        <p>Timeline from Jesus Christ's Birth, <br/> Holy Spirit's take over and The New Covenant</p>
                     </div>
                 </div>
             </div>

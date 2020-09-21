@@ -4,6 +4,7 @@ import axios from 'axios';
 import './_style.css';
 import SearchRow from './SearchRow';
 import { questionOptions, groupedOptions } from './data';
+import Questionnotes from '../questionnotes/questionnotes.component';
 
 const formatGroupLabel = data => (
     <div style={groupStyles}>
@@ -40,13 +41,20 @@ export default class Question extends Component {
             results : [],
             questionvalue: 'jesus-1',
             default_question: 'Who is Jesus?',
-            question: null
+            question: null,
+            isDesktop: false
         };
 
         axios.defaults.baseURL = 'http://localhost:4000';
     }
 
     componentDidMount(){
+        if (window.innerWidth > 768) {
+            this.setState({ isDesktop: true });
+        } else {
+            this.setState({ isDesktop: false });
+        }
+
 		axios.get(`/question/search/${this.state.questionvalue}`)
         .then(response =>{
             this.setState({results : response.data});
@@ -91,6 +99,8 @@ export default class Question extends Component {
     }
 
 	render(){
+        const { isDesktop } = this.state;
+
 		return (
 			<div className="search-top">
                 <div className="searchbox-layer0">
@@ -131,19 +141,7 @@ export default class Question extends Component {
                             { this.tabRow() }
                         </div>
                     </div>
-                    <div className="content-container-right" id="image-area">
-                        {/* <div>
-                            <img className="" src="https://i.imgur.com/FaFaaIX.jpg" alt="peace" width="367" height="250"/>
-                        </div> */}
-                        <div className="details-area">
-                            <div className="infobox-left">
-                                <b>Mentioned in Bible</b>
-                            </div>
-                            <div className="infobox-right">
-                                429 times [KJV version]
-                            </div>
-                        </div>
-                    </div>                           
+                    {isDesktop ? <Questionnotes /> : null}                           
                 </div>
 			</div>
 		)

@@ -39,7 +39,7 @@ export default class Home extends Component {
             searchtags: [],
             width: 0
         }
-        axios.defaults.baseURL = 'http://localhost:4000/keywords';
+        axios.defaults.baseURL = 'http://localhost:4000/en/keywords';
     }
 
     componentDidMount() {
@@ -129,7 +129,7 @@ export default class Home extends Component {
                     <div className="col-lg-4 thumbnail">
                         <a href="/question"><img className="rounded-circle" src="https://i.imgur.com/ls1f4NZ.png" alt="questions" width="140" height="140" /></a>
                         <h3>Ask Me</h3>
-                        <p>Whoever drinks the water I give him will never thirst</p>
+                        <p>Ask and it will be given to you; seek and you will find</p>
                     </div>
                     <div className="col-lg-4 thumbnail">
                         <img className="rounded-circle" src="https://i.imgur.com/Fhc7ADO.png" alt="from NewTestament" width="140" height="140" />

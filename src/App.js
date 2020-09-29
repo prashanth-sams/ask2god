@@ -84,7 +84,7 @@ class App extends Component {
                   </Link>
                 </li>
                 <li className="nav-item dropdown ml-auto">
-                    <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: '#6c757d'}}>
+                    <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#6c757d"}}>
                       <i className="fa fa-globe"></i> English
                     </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">

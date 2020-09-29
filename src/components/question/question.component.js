@@ -1,10 +1,10 @@
-import React , { Component } from 'react';
-import Select from 'react-select';
-import axios from 'axios';
-import './_style.css';
-import SearchRow from './SearchRow';
-import { questionOptions, groupedOptions } from './data';
-import Questionnotes from '../questionnotes/questionnotes.component';
+import React , { Component } from "react";
+import Select from "react-select";
+import axios from "axios";
+import "./_style.css";
+import SearchRow from "./SearchRow";
+import { questionOptions, groupedOptions } from "./data";
+import Questionnotes from "../questionnotes/questionnotes.component";
 
 const formatGroupLabel = data => (
     <div style={groupStyles}>

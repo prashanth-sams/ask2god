@@ -70,8 +70,8 @@ class App extends Component {
           </Menu>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to={'/'} className="navbar-brand" id="home" onClick={handleClick}>Ask2God</Link>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav mr-auto" id="header">
+            <div className="col-md-12" id="navbarSupportedContent">
+              <ul className="navbar-nav" id="header">
                 <li className="nav-item">
                   <Link to={'/search'} className="nav-link" id="search" onClick={handleClick}>
                     <i className="fa fa-search"></i>
@@ -82,6 +82,16 @@ class App extends Component {
                   <Link to={'/question'} className="nav-link" id="question" onClick={handleClick}>
                     <span> Q & A?</span>
                   </Link>
+                </li>
+                <li className="nav-item dropdown ml-auto">
+                    <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#6c757d"}}>
+                      <i className="fa fa-globe"></i> English
+                    </button>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a className="dropdown-item" href="#">English</a>
+                      <a className="dropdown-item" href="#">தமிழ்</a>
+                      <a className="dropdown-item" href="#">हिंदी</a>
+                    </div>
                 </li>
               </ul>
             </div>

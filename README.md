@@ -38,6 +38,16 @@ nodemon server
 
 ### `mongodb://localhost:27017/manager`
 
+```
+brew tap mongodb/brew
+brew install mongodb-community
+
+brew services start mongodb-community
+mongod --config /usr/local/etc/mongod.conf
+
+ps aux | grep -v grep | grep mongod
+mongo
+```
 
 # Tests
 

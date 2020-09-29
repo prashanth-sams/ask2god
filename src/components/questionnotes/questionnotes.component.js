@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 export default class Questionnotes extends Component {
   render() {
@@ -13,6 +13,6 @@ export default class Questionnotes extends Component {
                 </div>
             </div>
         </div>
-    )
+    );
   }
 }

@@ -5,7 +5,7 @@ import axios from 'axios';
 import './_style.css';
 import SearchRow from './SearchRow';
 import Loading from '../loading/loading.component';
-import Searchnotes from '../searchnotes/searchnotes.component';
+import Searchnotes from "../searchnotes/searchnotes.component";
 
 const style = {
     // width: '3px',

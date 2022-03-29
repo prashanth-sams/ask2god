@@ -1,6 +1,6 @@
 # Ask2God
 [![codecov](https://codecov.io/gh/prashanth-sams/ask2god/branch/master/graph/badge.svg)](https://codecov.io/gh/prashanth-sams/ask2god)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7cdb996f24384f4194f6a6cd288e24ad)](https://app.codacy.com/app/prashanth-sams/a2g_manager?utm_source=github.com&utm_medium=referral&utm_content=prashanth-sams/a2g_manager&utm_campaign=Badge_Grade_Dashboard)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/98e28527e82546358f617e9c44e6d670)](https://www.codacy.com/gh/prashanth-sams/ask2god/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prashanth-sams/ask2god&amp;utm_campaign=Badge_Grade)
 
 > Ask and it will be given to you; seek and you will find - `Matthew 7:7`
 

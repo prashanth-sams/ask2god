@@ -17,8 +17,3 @@ coverage:
 comment:
   layout: "header, diff, changes, sunburst, uncovered, tree"
   behavior: default
-
-ignore:
-  - src/index.js
-  - src/App.js
-  - src/serviceWorker.js

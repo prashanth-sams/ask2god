@@ -1,31 +1,24 @@
 coverage:
-  branch: master
-  bot: null
-
+  precision: 2
+  round: down
+  range: "70...100"
+  
   status:
-    precision: 2
-    round: down
-    range: "70...100"
-
     project:
       default:
-        target: 0%
-        branches: null
-        threshold: null
-        # threshold: 3
-        # Fail the status if coverage drops by >= 3%
+        target: auto
+        threshold: 5
 
     patch:
       default:
-        target: 0%
-        branches: null
-        # threshold: 3
-    
-    changes:
-      default:
-        branches: null
+        enabled: no
+    changes: false
 
 comment:
   layout: "header, diff, changes, sunburst, uncovered, tree"
-  branches: null
   behavior: default
+
+ignore:
+  - src/index.js
+  - src/App.js
+  - src/serviceWorker.js

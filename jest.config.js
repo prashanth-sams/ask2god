@@ -8,7 +8,9 @@ module.exports = {
     "collectCoverageFrom": [
         "src/**/*.{js,jsx}",
         "!**/node_modules/**",
-        "!**/vendor/**"
+        "!**/vendor/**",
+        "!src/*.{js,jsx}",
+        "!src/docs/**",
     ],
     "testMatch": [
       "**/*.spec.(js|jsx)"

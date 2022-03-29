@@ -6,6 +6,9 @@ on:
   
   workflow_dispatch:
 
+env:
+  CODECOV_TOKEN: ${ secrets.CODECOV_TOKEN }
+
 jobs:
   component-test:
     runs-on: ubuntu-latest

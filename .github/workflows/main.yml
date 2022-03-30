@@ -25,12 +25,12 @@ jobs:
           - 27017:27017
     steps:
     - uses: actions/checkout@v2
+    - name: build docker image
+      run: docker build -t a2g-be .
+    - name: run backend server
+      run: docker run -d -p 4000:4000 a2g-be
     - name: component test
       run: |
-        cd ./api/
-        npm install
-        npm run start &
-        cd ..
         npm install
         npm install -g jest-cli
         npm test

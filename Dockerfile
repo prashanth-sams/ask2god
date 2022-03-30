@@ -1,21 +1,10 @@
-FROM node:10
+FROM node:alpine
 
-# Create app directory
-WORKDIR /usr/src/app
+WORKDIR /usr/app/api
 
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
-COPY package*.json ./
-# COPY yarn.lock ./
+COPY ./ /usr/app
 
 RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
 
-# Bundle app source
-COPY . .
-
-EXPOSE 3000
+EXPOSE 4000
 ENTRYPOINT npm start
-# CMD [ "npm", "start" ]

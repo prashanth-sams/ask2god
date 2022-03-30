@@ -6,7 +6,7 @@ describe('GET /', () => {
     
     it('should return 200 OK', (done) => {
       request(keywords)
-        .get('/')
+        .get('/en/keywords')
         .expect(200, done);
     });
 

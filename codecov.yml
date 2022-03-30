@@ -14,8 +14,7 @@ coverage:
         target: 80%
     
     changes:
-      default:
-        branches: null
+      enabled: false
 
 comment:
   layout: "header, diff, changes, sunburst, uncovered, tree"

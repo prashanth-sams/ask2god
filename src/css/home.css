@@ -225,3 +225,7 @@ div[class$=-option], div[class$=-option]:hover {
         padding-top: 0%;
     }
 }
+
+a.main-search-button {
+    color: transparent;
+}

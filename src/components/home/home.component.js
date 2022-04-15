@@ -3,6 +3,7 @@ import Select from 'react-select';
 import axios from 'axios';
 import './../../css/home.css';
 import { colourOptions } from '../../docs/data';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 
 const style = {
@@ -37,9 +38,11 @@ export default class Home extends Component {
 
         this.state = {
             searchtags: [],
-            width: 0
+            width: 0,
+            lang: "en"
         }
-        axios.defaults.baseURL = `http://localhost:4000/en/search`;
+        console.log(`http://localhost:4000/${this.state.lang}`)
+        axios.defaults.baseURL = `http://localhost:4000/${this.state.lang}`;
     }
 
     componentDidMount() {
@@ -108,13 +111,13 @@ export default class Home extends Component {
                                 </div>
                             </div>
                         </div>
-                        <a onClick={this.onClick.bind(this)} href='/search'>
+                        <Link className="main-search-button" onClick={this.onClick.bind(this)} to={{pathname:'/en/search',state:{tag: this.state.searchtags}}}>
                             <button type="button" className="search-button">
                                 <span>Search</span>
                             </button>
-                        </a>
+                        </Link>
                     </div>
-                    <a onClick={this.onClick.bind(this)} href='/search'>
+                    <a onClick={this.onClick.bind(this)} href='/en/search'>
                         <button type="button" className="mobile-search-button">
                             <span>Search</span>
                         </button>
@@ -127,7 +130,7 @@ export default class Home extends Component {
                         <p>Chronology of the Old Testament <br/> Adam to Jesus Christ's Birth</p>
                     </div>
                     <div className="col-lg-4 thumbnail">
-                        <a href="/question"><img className="rounded-circle" src="https://i.imgur.com/ls1f4NZ.png" alt="questions" width="140" height="140" /></a>
+                        <a href="/en/question"><img className="rounded-circle" src="https://i.imgur.com/ls1f4NZ.png" alt="questions" width="140" height="140" /></a>
                         <h3>Ask Me</h3>
                         <p>Ask and it will be given to you; seek and you will find</p>
                     </div>

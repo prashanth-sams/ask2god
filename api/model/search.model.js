@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema for Manager
 let Search = new Schema({
-  
   tag_name: [{
     type: String
   }],
@@ -24,4 +23,4 @@ let Search = new Schema({
     collection: 'manager'
 });
 
-module.exports = mongoose.model('Search', Search);
+module.exports = mongoose.model("Search", Search);

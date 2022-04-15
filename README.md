@@ -1,4 +1,4 @@
-# Ask2God
+# Ask2God | Bible Search Engine
 [![codecov](https://codecov.io/gh/prashanth-sams/ask2god/branch/master/graph/badge.svg)](https://codecov.io/gh/prashanth-sams/ask2god)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/98e28527e82546358f617e9c44e6d670)](https://www.codacy.com/gh/prashanth-sams/ask2god/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=prashanth-sams/ask2god&amp;utm_campaign=Badge_Grade)
 

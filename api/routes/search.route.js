@@ -12,12 +12,12 @@ searchRoutes.route("/:language(en|ta)/search/add").post(function (req, res) {
   let search = new Search(req.body);
   
   search.save()
-    .then(search => {
-      res.status(200).json({'search': 'search keyword added successfully'});
-    })
-    .catch(err => {
-      res.status(400).send("unable to save to database");
-    });
+  .then(search => {
+    res.status(200).json({'search': 'search keyword added successfully'});
+  })
+  .catch(err => {
+    res.status(400).send("unable to save to database");
+  });
 });
 
 // Defined get data(index or listing) route

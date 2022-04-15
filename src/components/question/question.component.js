@@ -45,7 +45,9 @@ export default class Question extends Component {
             isDesktop: false
         };
 
-        axios.defaults.baseURL = 'http://localhost:4000';
+        // axios.defaults.baseURL = 'http://localhost:4000/en';
+        console.log(`http://localhost:4000${window.location.pathname}/`);
+        axios.defaults.baseURL = `http://localhost:4000${window.location.pathname}/`;
     }
 
     componentDidMount(){
@@ -55,7 +57,7 @@ export default class Question extends Component {
             this.setState({ isDesktop: false });
         }
 
-		axios.get(`/question/search/${this.state.questionvalue}`)
+		axios.get(`/${this.state.questionvalue}`)
         .then(response =>{
             this.setState({results : response.data});
         })
@@ -78,7 +80,7 @@ export default class Question extends Component {
     handleSelectChange(event) {
         if (event !== undefined) {
 
-            axios.get(`/question/search/${event.value}`)
+            axios.get(`/${event.value}`)
             .then(response =>{
                 this.setState({results : response.data, question: response.data[0].question});
             })

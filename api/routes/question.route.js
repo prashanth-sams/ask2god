@@ -19,7 +19,7 @@ questionRoute.route('/:language(en|ta)/question/add').post(function (req, res) {
 });
 
 // Filter with query_text
-questionRoute.route('/:language(en|ta)/question/search/:value').get(function (req, res) {
+questionRoute.route('/:language(en|ta)/question/:value').get(function (req, res) {
   let value = req.params.value;
   Question.find({ value: value }, function(err, data){
     res.json(data);

@@ -45,7 +45,9 @@ export default class Search extends Component {
             isDesktop: false
         };
 
-        axios.defaults.baseURL = 'http://localhost:4000/en/keywords';
+        // axios.defaults.baseURL = 'http://localhost:4000/en';
+        console.log(`http://localhost:4000${window.location.pathname}/`);
+        axios.defaults.baseURL = `http://localhost:4000${window.location.pathname}/`;
     }
 
     componentDidMount(){
@@ -59,7 +61,7 @@ export default class Search extends Component {
             this.setState({ isDesktop: false });
         }
 
-        axios.get(`/search/${this.state.tag}`).then(response =>{
+        axios.get(`/${this.state.tag}`).then(response =>{
             this.setState({
                 results : response.data,
                 isLoading: false
@@ -73,7 +75,7 @@ export default class Search extends Component {
     onClick(e){
 		// e.preventDefault();
         const tags=this.state.searchtags || ["peace"];
-		axios.get(`/search/${tags}`).then(response => {           
+		axios.get(`/${tags}`).then(response => {           
             console.log(response.data)
             this.setState({results : response.data, tag_label: this.state.searchtags});
 		}).catch(function(error){

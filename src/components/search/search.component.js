@@ -39,7 +39,7 @@ export default class Search extends Component {
         this.onClick= this.onClick.bind(this);
         this.state = {
             results : [],
-            tag: 'peace',
+            tag: this.tagDeveloper(),
             tag_label: null,
             isLoading: false,
             isDesktop: false
@@ -48,6 +48,15 @@ export default class Search extends Component {
         // axios.defaults.baseURL = 'http://localhost:4000/en';
         console.log(`http://localhost:4000${window.location.pathname}/`);
         axios.defaults.baseURL = `http://localhost:4000${window.location.pathname}/`;
+    }
+
+    tagDeveloper(){
+        try {
+            return this.props.location.state.tag[0];
+        }
+        catch (e) {
+            return "peace";
+        }
     }
 
     componentDidMount(){
@@ -119,7 +128,7 @@ export default class Search extends Component {
                                         onChange={this.handleSelectChange}
                                         options={colourOptions}
                                         placeholder="Search keywords [e.g., Jesus]"
-                                        defaultValue={[{ label: "Peace", value: "peace" }]}
+                                        defaultValue={[{ label: this.state.tag, value: this.state.tag }]}
                                         autoFocus
                                         required
                                         styles={style}

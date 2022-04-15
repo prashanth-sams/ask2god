@@ -39,7 +39,7 @@ export default class Home extends Component {
             searchtags: [],
             width: 0
         }
-        axios.defaults.baseURL = 'http://localhost:4000/en/keywords';
+        axios.defaults.baseURL = `http://localhost:4000/en/search`;
     }
 
     componentDidMount() {

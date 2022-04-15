@@ -6,7 +6,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./DB');
 
-const keywordRoute = require('./routes/keywords.route');
+const keywordRoute = require('./routes/search.route');
 const questionRoute = require('./routes/question.route');
 // const revelationRoute = require('./routes/revelation.route');
 

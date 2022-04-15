@@ -13,7 +13,7 @@ module.exports = {
         "!src/docs/**",
     ],
     "testMatch": [
-      "**/*.spec.(js|jsx)"
+      "**/*.test.(js|jsx)"
     ],
     "roots": [
       "./src"

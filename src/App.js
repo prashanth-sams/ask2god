@@ -73,13 +73,13 @@ class App extends Component {
             <div className="col-md-12" id="navbarSupportedContent">
               <ul className="navbar-nav" id="header">
                 <li className="nav-item">
-                  <Link to={'/search'} className="nav-link" id="search" onClick={handleClick}>
+                  <Link to={'/en/search'} className="nav-link" id="search" onClick={handleClick}>
                     <i className="fa fa-search"></i>
                     <span> Search</span>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={'/question'} className="nav-link" id="question" onClick={handleClick}>
+                  <Link to={'/en/question'} className="nav-link" id="question" onClick={handleClick}>
                     <span> Q & A?</span>
                   </Link>
                 </li>
@@ -99,8 +99,8 @@ class App extends Component {
           <br/>
           <Switch>
               <Route exact path='/' component={ Home } />
-              <Route path='/search' component={ Search } />
-              <Route path='/question' component={ Question } />
+              <Route path='/en/search' component={ Search } />
+              <Route path='/en/question' component={ Question } />
               <Route path='/timeline' component={ Timeline } />
               {/* <Route path='/revelation' component={ Revelation } /> */}
               {/* <ReactLoading type={'bars'} color={'#5243AA'} height={'20%'} width={'20%'} /> */}

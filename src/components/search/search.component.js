@@ -52,11 +52,19 @@ export default class Search extends Component {
 
     tagDeveloper(){
         try {
-            return this.props.location.state.tag[0];
+            if (window.history.state.searchtags !== undefined) {
+                return window.history.state.searchtags;
+            } else {
+                return this.props.location.state.tag[0];
+            }
         }
         catch (e) {
             return "peace";
         }
+    }
+
+    capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     componentDidMount(){
@@ -82,14 +90,17 @@ export default class Search extends Component {
 	}
 
     onClick(e){
-		// e.preventDefault();
-        const tags=this.state.searchtags || ["peace"];
+        window.history.replaceState(null, '');
+
+        const tags=this.state.searchtags;
 		axios.get(`/${tags}`).then(response => {           
             console.log(response.data)
             this.setState({results : response.data, tag_label: this.state.searchtags});
 		}).catch(function(error){
 			console.log(error);
 		})
+        
+        window.history.pushState(this.state, this.state.searchtags);
     }
 
     handleSelectChange( event ) {
@@ -128,7 +139,7 @@ export default class Search extends Component {
                                         onChange={this.handleSelectChange}
                                         options={colourOptions}
                                         placeholder="Search keywords [e.g., Jesus]"
-                                        defaultValue={[{ label: this.state.tag, value: this.state.tag }]}
+                                        defaultValue={[{ label: this.capitalizeFirstLetter(this.state.tag), value: this.state.tag }]}
                                         autoFocus
                                         required
                                         styles={style}

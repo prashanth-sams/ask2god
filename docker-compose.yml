@@ -9,7 +9,7 @@ services:
       - .:/usr/src/app
     ports:
       - "3000:3000"
-    command: bash -c "npm rebuild node-sass && npm start"
+    command: bash -c "npm start"
     restart: always
 
   backend:
@@ -27,15 +27,17 @@ services:
     environment:
       - MONGO_HOST=mongo
       - MONGO_URL=mongodb://mongo:27017/
+      - MONGO_ENV=docker
     command: bash -c "sleep 20 && npm start"
     restart: always
   
   mongo:
     container_name: mongo
     hostname: mongo
-    image: mongo:latest
+    image: mongo:4.4.0
     ports:
       - "27017:27017"
+    command: mongod --dbpath /data/db
     volumes:
       - ./data:/data/db
     restart: always

@@ -20,13 +20,13 @@ function handleClick(e) {
   for (var i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener("click", function() {
       var current = document.getElementsByClassName("active");
-      current[0].className = current[0].className.replace(" active", "");
+      // current[0].className = current[0].className.replace(" active", "");
       this.className += " active";
     });
   }
 
   logo.addEventListener("click", function() {
-    document.getElementsByClassName("active")[0].classList.remove('active');
+    // document.getElementsByClassName("active")[0].classList.remove('active');
     var current = document.getElementById("home");
     current.className += " active";
   });
@@ -34,7 +34,7 @@ function handleClick(e) {
 
 class App extends Component {
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     if (window.location.pathname.includes('/') && window.location.pathname.length <= 1) {
       document.getElementById("home").className += " active";
     } else if (window.location.pathname.includes('/search') && window.location.pathname.length > 2) {

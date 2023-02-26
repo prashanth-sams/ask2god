@@ -45,10 +45,10 @@ export default class Search extends Component {
             isDesktop: false
         };
 
-        axios.defaults.baseURL = 'http://localhost:4000/en/keywords';
+        axios.defaults.baseURL = 'http://localhost:4000/keywords';
     }
 
-    componentDidMount(){
+    UNSAFE_componentDidMount(){
         this.setState({
             isLoading: true
         })

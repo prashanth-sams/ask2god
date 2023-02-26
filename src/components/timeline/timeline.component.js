@@ -15,11 +15,11 @@ export default class Timeline extends Component {
         this.handleCloseModal = this.handleCloseModal.bind(this);
     }
 
-    componentDidMount() {
+    UNSAFE_componentDidMount() {
         window.addEventListener("scroll", this.handleScroll);
     }
 
-    componentWillUnmount() {
+    UNSAFE_componentWillUnmount() {
         window.removeEventListener("scroll", this.handleScroll);
     }
 

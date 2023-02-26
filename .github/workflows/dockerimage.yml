@@ -19,6 +19,6 @@ jobs:
         docker build -t ask2god:$VERSION .
         docker tag ask2god:$VERSION ask2god:latest
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-        docker push ask2god:$VERSION
-        docker push ask2god:latest
+        docker push prashanthsams/ask2god:$VERSION
+        docker push prashanthsams/ask2god:latest
         

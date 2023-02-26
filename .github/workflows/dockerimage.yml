@@ -2,8 +2,8 @@ name: Ask2God CI
 
 on:
   push:
-    tags:
-      - debug
+    branches:
+      - "debug"
   workflow_dispatch:
 
 jobs:

@@ -38,7 +38,8 @@
     "start": "NODE_OPTIONS=\"--openssl-legacy-provider --trace-deprecation\" react-scripts start",
     "build": "react-scripts build",
     "test": "jest --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:run": "npx cypress run --spec cypress/e2e/scenarios/*.feature"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -50,11 +51,22 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^15.1.2",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "babel-plugin-transform-export-extensions": "^6.22.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "cypress": "^12.7.0",
+    "cypress-mochawesome-reporter": "^3.3.0",
+    "cypress-xpath": "^2.0.1",
     "enzyme-adapter-react-16": "^1.15.4",
     "jest-cli": "^24.9.0",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "typescript": "^4.5.4"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e/step-definitions/*.js"
   }
 }

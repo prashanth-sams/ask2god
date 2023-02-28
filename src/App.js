@@ -83,7 +83,7 @@ class App extends Component {
                     <span> Q & A?</span>
                   </Link>
                 </li>
-                <li className="nav-item dropdown ml-auto">
+                <li className="nav-item dropdown ml-auto" style={{margin: "0 15%"}}>
                     <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{color: "#6c757d"}}>
                       <i className="fa fa-globe"></i> English
                     </button>

@@ -51,8 +51,13 @@ mongo
 
 # Tests
 
-### Test Runner
+### Jest Test Runner
 ```
 npm install -g jest-cli
 npm test
+```
+
+### Cypress Test Runner
+```
+npx cypress run --browser chrome
 ```
